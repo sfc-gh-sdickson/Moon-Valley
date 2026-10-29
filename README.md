@@ -1,4 +1,4 @@
-<img src="Snowflake_Logo.svg" width="200">
+<img src="Moon_Valley_Logo.svg" width="300">
 
 # Moon Valley Nursery — Retail Sales, Inventory & Planting-Operations Intelligence Agent
 
