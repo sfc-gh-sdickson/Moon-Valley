@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 540" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <filter id="sh">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1100" height="540" fill="#ffffff"/>
+  <text x="550" y="34" text-anchor="middle" fill="#1a1a2e" font-size="22" font-weight="bold">Moon Valley Nursery ML Model Pipeline</text>
+  <text x="550" y="54" text-anchor="middle" fill="#666" font-size="11">Snowflake Model Registry (MVN_INTELLIGENCE.ANALYTICS) | 4 Registered GradientBoosting Models</text>
+
+  <!-- Step 1: Data Sources -->
+  <rect x="30" y="75" width="190" height="175" rx="8" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="125" y="100" text-anchor="middle" fill="#0e7fad" font-size="12" font-weight="bold">Data Sources</text>
+  <text x="125" y="124" text-anchor="middle" fill="#555" font-size="10">FACT_SALES_LINE</text>
+  <text x="125" y="144" text-anchor="middle" fill="#555" font-size="10">FACT_SALES_TRANSACTION</text>
+  <text x="125" y="164" text-anchor="middle" fill="#555" font-size="10">FACT_INVENTORY_DAILY</text>
+  <text x="125" y="184" text-anchor="middle" fill="#555" font-size="10">FACT_PLANTED_JOBS</text>
+  <text x="125" y="204" text-anchor="middle" fill="#555" font-size="10">DIM_LOCATION &amp; PRODUCT</text>
+  <text x="125" y="224" text-anchor="middle" fill="#555" font-size="10">DIM_DATE &amp; DIM_CREW</text>
+
+  <line x1="220" y1="162" x2="258" y2="162" stroke="#29b5e8" stroke-width="1.5"/>
+  <polygon points="256,158 266,162 256,166" fill="#29b5e8"/>
+
+  <!-- Step 2: Feature Views -->
+  <rect x="270" y="75" width="225" height="175" rx="8" fill="#f3f0ff" stroke="#7b61ff" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="382" y="100" text-anchor="middle" fill="#5a3ec8" font-size="12" font-weight="bold">Feature Engineering Views</text>
+  <text x="382" y="125" text-anchor="middle" fill="#555" font-size="10">V_WEEKLY_SALES_STORE_CATEGORY</text>
+  <text x="382" y="142" text-anchor="middle" fill="#888" font-size="9">4-wk lag sales, season, store age</text>
+  <text x="382" y="162" text-anchor="middle" fill="#555" font-size="10">V_ML_STOCKOUT_FEATURES</text>
+  <text x="382" y="179" text-anchor="middle" fill="#888" font-size="9">days of supply, sell rate, lead time</text>
+  <text x="382" y="199" text-anchor="middle" fill="#555" font-size="10">V_ML_PLANTING_ATTACH_FEATURES</text>
+  <text x="382" y="219" text-anchor="middle" fill="#555" font-size="10">V_ML_PLANTING_DELAY_FEATURES</text>
+  <text x="382" y="236" text-anchor="middle" fill="#888" font-size="9">box tier, crew size, crane cert</text>
+
+  <line x1="495" y1="162" x2="533" y2="162" stroke="#7b61ff" stroke-width="1.5"/>
+  <polygon points="531,158 541,162 531,166" fill="#7b61ff"/>
+
+  <!-- Step 3: 4 Trained Models -->
+  <rect x="545" y="72" width="240" height="40" rx="6" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="665" y="90" text-anchor="middle" fill="#0e7fad" font-size="11" font-weight="bold">Weekly Sales Forecast</text>
+  <text x="665" y="104" text-anchor="middle" fill="#666" font-size="9">GBR | 150 trees | 7 features</text>
+
+  <rect x="545" y="118" width="240" height="40" rx="6" fill="#fff3ed" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="665" y="136" text-anchor="middle" fill="#b33f08" font-size="11" font-weight="bold">14-Day Stockout Risk</text>
+  <text x="665" y="150" text-anchor="middle" fill="#666" font-size="9">GBC | 120 trees | 7 features</text>
+
+  <rect x="545" y="164" width="240" height="40" rx="6" fill="#f3f0ff" stroke="#7b61ff" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="665" y="182" text-anchor="middle" fill="#5a3ec8" font-size="11" font-weight="bold">Planting Attach Propensity</text>
+  <text x="665" y="196" text-anchor="middle" fill="#666" font-size="9">GBC | 120 trees | 6 features</text>
+
+  <rect x="545" y="210" width="240" height="40" rx="6" fill="#edf9f0" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="665" y="228" text-anchor="middle" fill="#007a31" font-size="11" font-weight="bold">Planting Delay Risk</text>
+  <text x="665" y="242" text-anchor="middle" fill="#666" font-size="9">GBC | 120 trees | 6 features</text>
+
+  <line x1="785" y1="162" x2="823" y2="162" stroke="#e8530e" stroke-width="1.5"/>
+  <polygon points="821,158 831,162 821,166" fill="#e8530e"/>
+
+  <!-- Step 4: Model Registry -->
+  <rect x="835" y="75" width="235" height="175" rx="8" fill="#fff3ed" stroke="#e8530e" stroke-width="2" filter="url(#sh)"/>
+  <text x="952" y="98" text-anchor="middle" fill="#b33f08" font-size="13" font-weight="bold">Snowflake Model Registry</text>
+  <text x="952" y="115" text-anchor="middle" fill="#888" font-size="10">MVN_INTELLIGENCE.ANALYTICS</text>
+  <line x1="845" y1="124" x2="1060" y2="124" stroke="#ffd4bf" stroke-width="1"/>
+  <text x="952" y="144" text-anchor="middle" fill="#0e7fad" font-size="9" font-weight="bold">WEEKLY_SALES_FORECAST_MODEL/V1</text>
+  <text x="952" y="166" text-anchor="middle" fill="#b33f08" font-size="9" font-weight="bold">STOCKOUT_RISK_MODEL/V1</text>
+  <text x="952" y="188" text-anchor="middle" fill="#5a3ec8" font-size="9" font-weight="bold">PLANTING_ATTACH_MODEL/V1</text>
+  <text x="952" y="210" text-anchor="middle" fill="#007a31" font-size="9" font-weight="bold">PLANTING_DELAY_RISK_MODEL/V1</text>
+  <text x="952" y="234" text-anchor="middle" fill="#666" font-size="9">Called via MODEL()!PREDICT() UDFs</text>
+
+  <!-- Bottom Section: 4 Model Cards -->
+  <text x="550" y="290" text-anchor="middle" fill="#1a1a2e" font-size="16" font-weight="bold">Model Specifications &amp; Agent UDF Integration</text>
+
+  <rect x="30" y="310" width="245" height="195" rx="8" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="152" y="334" text-anchor="middle" fill="#0e7fad" font-size="13" font-weight="bold">Weekly Sales Forecast</text>
+  <text x="152" y="352" text-anchor="middle" fill="#666" font-size="10">Target: WEEKLY_NET_SALES</text>
+  <line x1="40" y1="362" x2="265" y2="362" stroke="#b3e5fc" stroke-width="1"/>
+  <text x="45" y="382" fill="#333" font-size="10">Task</text>
+  <text x="260" y="382" text-anchor="end" fill="#0e7fad" font-size="10" font-weight="bold">Regression (GBR)</text>
+  <text x="45" y="402" fill="#333" font-size="10">Metrics Logged</text>
+  <text x="260" y="402" text-anchor="end" fill="#0e7fad" font-size="10" font-weight="bold">MAE, R-squared</text>
+  <text x="45" y="422" fill="#333" font-size="10">Agent Tool</text>
+  <text x="260" y="422" text-anchor="end" fill="#0e7fad" font-size="10" font-weight="bold">ForecastWeeklySales</text>
+  <line x1="40" y1="434" x2="265" y2="434" stroke="#b3e5fc" stroke-width="0.5"/>
+  <text x="45" y="454" fill="#0e7fad" font-size="9">Features: State, Category, Season,</text>
+  <text x="45" y="470" fill="#0e7fad" font-size="9">Peak Flag, Sq Ft, Store Age Months,</text>
+  <text x="45" y="486" fill="#0e7fad" font-size="9">Trailing 4-Week Avg Sales</text>
+
+  <rect x="295" y="310" width="245" height="195" rx="8" fill="#fff3ed" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="417" y="334" text-anchor="middle" fill="#b33f08" font-size="13" font-weight="bold">14-Day Stockout Risk</text>
+  <text x="417" y="352" text-anchor="middle" fill="#666" font-size="10">Target: STOCKOUT_NEXT_14D_FLAG</text>
+  <line x1="305" y1="362" x2="530" y2="362" stroke="#ffd4bf" stroke-width="1"/>
+  <text x="310" y="382" fill="#333" font-size="10">Task</text>
+  <text x="525" y="382" text-anchor="end" fill="#b33f08" font-size="10" font-weight="bold">Classification (GBC)</text>
+  <text x="310" y="402" fill="#333" font-size="10">Metrics Logged</text>
+  <text x="525" y="402" text-anchor="end" fill="#b33f08" font-size="10" font-weight="bold">Accuracy, F1 Score</text>
+  <text x="310" y="422" fill="#333" font-size="10">Agent Tool</text>
+  <text x="525" y="422" text-anchor="end" fill="#b33f08" font-size="10" font-weight="bold">StockoutRisk</text>
+  <line x1="305" y1="434" x2="530" y2="434" stroke="#ffd4bf" stroke-width="0.5"/>
+  <text x="310" y="454" fill="#b33f08" font-size="9">Features: On-Hand Units, On-Order,</text>
+  <text x="310" y="470" fill="#b33f08" font-size="9">Daily Sell Rate, Days of Supply,</text>
+  <text x="310" y="486" fill="#b33f08" font-size="9">Farm Lead Time, Peak &amp; Palm Flags</text>
+
+  <rect x="560" y="310" width="245" height="195" rx="8" fill="#f3f0ff" stroke="#7b61ff" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="682" y="334" text-anchor="middle" fill="#5a3ec8" font-size="13" font-weight="bold">Planting Attach Propensity</text>
+  <text x="682" y="352" text-anchor="middle" fill="#666" font-size="10">Target: INCLUDES_PLANTING_NUM</text>
+  <line x1="570" y1="362" x2="795" y2="362" stroke="#d4c8ff" stroke-width="1"/>
+  <text x="575" y="382" fill="#333" font-size="10">Task</text>
+  <text x="790" y="382" text-anchor="end" fill="#5a3ec8" font-size="10" font-weight="bold">Classification (GBC)</text>
+  <text x="575" y="402" fill="#333" font-size="10">Metrics Logged</text>
+  <text x="790" y="402" text-anchor="end" fill="#5a3ec8" font-size="10" font-weight="bold">Accuracy, F1 Score</text>
+  <text x="575" y="422" fill="#333" font-size="10">Agent Tool</text>
+  <text x="790" y="422" text-anchor="end" fill="#5a3ec8" font-size="10" font-weight="bold">PlantingAttachPropensity</text>
+  <line x1="570" y1="434" x2="795" y2="434" stroke="#d4c8ff" stroke-width="0.5"/>
+  <text x="575" y="454" fill="#5a3ec8" font-size="9">Features: Customer Segment Code,</text>
+  <text x="575" y="470" fill="#5a3ec8" font-size="9">Tree Units, Box-Tree Units, Total</text>
+  <text x="575" y="486" fill="#5a3ec8" font-size="9">Units, Gross Ticket ($), Peak Flag</text>
+
+  <rect x="825" y="310" width="245" height="195" rx="8" fill="#edf9f0" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="947" y="334" text-anchor="middle" fill="#007a31" font-size="13" font-weight="bold">Planting Delay Risk</text>
+  <text x="947" y="352" text-anchor="middle" fill="#666" font-size="10">Target: DELAYED_FLAG</text>
+  <line x1="835" y1="362" x2="1060" y2="362" stroke="#b9f6ca" stroke-width="1"/>
+  <text x="840" y="382" fill="#333" font-size="10">Task</text>
+  <text x="1055" y="382" text-anchor="end" fill="#007a31" font-size="10" font-weight="bold">Classification (GBC)</text>
+  <text x="840" y="402" fill="#333" font-size="10">Metrics Logged</text>
+  <text x="1055" y="402" text-anchor="end" fill="#007a31" font-size="10" font-weight="bold">Accuracy, F1 Score</text>
+  <text x="840" y="422" fill="#333" font-size="10">Agent Tool</text>
+  <text x="1055" y="422" text-anchor="end" fill="#007a31" font-size="10" font-weight="bold">PlantingDelayRisk</text>
+  <line x1="835" y1="434" x2="1060" y2="434" stroke="#b9f6ca" stroke-width="0.5"/>
+  <text x="840" y="454" fill="#007a31" font-size="9">Features: Days to Schedule, Tree</text>
+  <text x="840" y="470" fill="#007a31" font-size="9">Count, Max Box Container Code,</text>
+  <text x="840" y="486" fill="#007a31" font-size="9">Crew Size, Peak &amp; Crane Cert Flags</text>
+</svg>

@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 880" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <filter id="sh">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shLg">
+      <feDropShadow dx="2" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="880" fill="#ffffff"/>
+  <text x="600" y="40" text-anchor="middle" fill="#1a1a2e" font-size="26" font-weight="bold">Moon Valley Nursery Intelligence Agent Architecture</text>
+  <text x="600" y="65" text-anchor="middle" fill="#666" font-size="13">Snowflake Intelligence + Claude via Managed MCP + Power BI + Kimball Constellation + Cortex AI</text>
+
+  <rect x="280" y="85" width="640" height="50" rx="10" fill="#29b5e8" filter="url(#sh)"/>
+  <text x="600" y="108" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">Users: Executives (Bill &amp; Catherine), Regional Leaders, AZ Store Managers, Analysts</text>
+  <text x="600" y="125" text-anchor="middle" fill="#eaf7fc" font-size="11">Snowflake Intelligence | Claude.ai via Managed MCP (MOON_VALLEY_MCP) | Power BI DirectQuery</text>
+
+  <line x1="600" y1="135" x2="600" y2="165" stroke="#29b5e8" stroke-width="2"/>
+  <polygon points="596,163 604,163 600,173" fill="#29b5e8"/>
+
+  <rect x="330" y="175" width="540" height="65" rx="12" fill="#e8530e" filter="url(#shLg)"/>
+  <text x="600" y="202" text-anchor="middle" fill="#fff" font-size="18" font-weight="bold">MOON_VALLEY_AGENT</text>
+  <text x="600" y="224" text-anchor="middle" fill="#ffe0cc" font-size="12">Snowflake Cortex Agent | 11 Tools | RBAC Row Access &amp; Masking Enforced</text>
+
+  <line x1="450" y1="240" x2="145" y2="275" stroke="#7b61ff" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="530" y1="240" x2="430" y2="275" stroke="#29b5e8" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="670" y1="240" x2="720" y2="275" stroke="#00a843" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="750" y1="240" x2="1025" y2="275" stroke="#e8530e" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+  <rect x="20" y="275" width="250" height="165" rx="10" fill="#f3f0ff" stroke="#7b61ff" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="145" y="300" text-anchor="middle" fill="#5a3ec8" font-size="14" font-weight="bold">Reference &amp; Standards</text>
+  <text x="145" y="318" text-anchor="middle" fill="#7b61ff" font-size="11">USDA Zones + PLANTS + GS1</text>
+  <line x1="30" y1="328" x2="260" y2="328" stroke="#d4c8ff" stroke-width="1"/>
+  <text x="35" y="348" fill="#444" font-size="11">HARDINESS_ZONE_DIM</text>
+  <text x="35" y="366" fill="#444" font-size="11">PLANT_TAXONOMY_DIM</text>
+  <text x="35" y="384" fill="#444" font-size="11">WATER_USE_DIM</text>
+  <text x="35" y="402" fill="#444" font-size="11">GS1_IDENTIFIERS (GTIN/GLN)</text>
+  <text x="35" y="420" fill="#444" font-size="11">PRODUCT_TAXONOMY_MAP</text>
+
+  <rect x="300" y="275" width="260" height="165" rx="10" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="430" y="300" text-anchor="middle" fill="#0e7fad" font-size="14" font-weight="bold">Cortex Analyst (3 SVs)</text>
+  <text x="430" y="318" text-anchor="middle" fill="#29b5e8" font-size="11">Text-to-SQL | Power BI Shared</text>
+  <line x1="310" y1="328" x2="550" y2="328" stroke="#b3e5fc" stroke-width="1"/>
+  <text x="315" y="348" fill="#444" font-size="11">SV_MOON_VALLEY_SALES</text>
+  <text x="315" y="366" fill="#666" font-size="10">3 Sales Facts | 6 Dims | 18 Metrics</text>
+  <text x="315" y="384" fill="#444" font-size="11">SV_MOON_VALLEY_PLANTING_OPS</text>
+  <text x="315" y="402" fill="#444" font-size="11">SV_MOON_VALLEY_INVENTORY_SUPPLY</text>
+  <text x="315" y="420" fill="#666" font-size="10">Verified Queries + Synonyms</text>
+
+  <rect x="590" y="275" width="260" height="165" rx="10" fill="#edf9f0" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="720" y="300" text-anchor="middle" fill="#007a31" font-size="14" font-weight="bold">Cortex Search (3 Services)</text>
+  <text x="720" y="318" text-anchor="middle" fill="#00a843" font-size="11">RAG | Unstructured Operations</text>
+  <line x1="600" y1="328" x2="840" y2="328" stroke="#b9f6ca" stroke-width="1"/>
+  <text x="605" y="348" fill="#444" font-size="11">MVN_PLANTING_NOTES_SEARCH</text>
+  <text x="605" y="366" fill="#666" font-size="10">240 Field Crew &amp; Caliche Logs</text>
+  <text x="605" y="384" fill="#444" font-size="11">MVN_PLANT_CARE_SEARCH</text>
+  <text x="605" y="402" fill="#444" font-size="11">MVN_WARRANTY_POLICY_SEARCH</text>
+  <text x="605" y="420" fill="#666" font-size="10">60 Care Guides | 30 Warranty Docs</text>
+
+  <rect x="880" y="275" width="290" height="165" rx="10" fill="#fff3ed" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="1025" y="300" text-anchor="middle" fill="#b33f08" font-size="14" font-weight="bold">Custom Tools (4 ML UDFs)</text>
+  <text x="1025" y="318" text-anchor="middle" fill="#e8530e" font-size="11">Snowflake Model Registry Inference</text>
+  <line x1="890" y1="328" x2="1160" y2="328" stroke="#ffd4bf" stroke-width="1"/>
+  <text x="895" y="348" fill="#444" font-size="11">AGENT_FORECAST_WEEKLY_SALES</text>
+  <text x="895" y="366" fill="#444" font-size="11">AGENT_STOCKOUT_RISK</text>
+  <text x="895" y="384" fill="#444" font-size="11">AGENT_PLANTING_ATTACH_PROPENSITY</text>
+  <text x="895" y="402" fill="#444" font-size="11">AGENT_PLANTING_DELAY_RISK</text>
+  <text x="895" y="420" fill="#444" font-size="11">data_to_chart</text>
+
+  <rect x="15" y="470" width="1170" height="260" rx="12" fill="#f8f9fa" stroke="#dde1e6" stroke-width="1" filter="url(#sh)"/>
+  <text x="600" y="496" text-anchor="middle" fill="#1a1a2e" font-size="14" font-weight="bold">KIMBALL DATA LAYER (MVN_INTELLIGENCE.RAW &amp; ANALYTICS)</text>
+
+  <rect x="30" y="510" width="170" height="120" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="115" y="535" text-anchor="middle" fill="#0e7fad" font-size="11" font-weight="bold">FACT_SALES_DAILY</text>
+  <text x="115" y="555" text-anchor="middle" fill="#555" font-size="10">Date x Location Grain</text>
+  <text x="115" y="570" text-anchor="middle" fill="#555" font-size="10">Net Sales, Gross Margin</text>
+  <text x="115" y="585" text-anchor="middle" fill="#555" font-size="10">Same-Store Comps</text>
+  <text x="115" y="600" text-anchor="middle" fill="#555" font-size="10">100% Line Reconciled</text>
+
+  <rect x="220" y="510" width="170" height="120" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="305" y="535" text-anchor="middle" fill="#0e7fad" font-size="11" font-weight="bold">FACT_SALES_TXN</text>
+  <text x="305" y="555" text-anchor="middle" fill="#555" font-size="10">Transaction Header Grain</text>
+  <text x="305" y="570" text-anchor="middle" fill="#555" font-size="10">Customer, Salesperson</text>
+  <text x="305" y="585" text-anchor="middle" fill="#555" font-size="10">Planting Attach Flag</text>
+  <text x="305" y="600" text-anchor="middle" fill="#555" font-size="10">Box-Tree Units</text>
+
+  <rect x="410" y="510" width="170" height="120" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="495" y="535" text-anchor="middle" fill="#0e7fad" font-size="11" font-weight="bold">FACT_SALES_LINE</text>
+  <text x="495" y="555" text-anchor="middle" fill="#555" font-size="10">Transaction x Line Grain</text>
+  <text x="495" y="570" text-anchor="middle" fill="#555" font-size="10">400 SKUs, Box Sizes</text>
+  <text x="495" y="585" text-anchor="middle" fill="#555" font-size="10">Promo Discount Types</text>
+  <text x="495" y="600" text-anchor="middle" fill="#555" font-size="10">2015-2026 History</text>
+
+  <rect x="600" y="510" width="170" height="120" rx="8" fill="#fff" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="685" y="535" text-anchor="middle" fill="#007a31" font-size="11" font-weight="bold">FACT_PLANTED_JOBS</text>
+  <text x="685" y="555" text-anchor="middle" fill="#555" font-size="10">Field Services App</text>
+  <text x="685" y="570" text-anchor="middle" fill="#555" font-size="10">100 Planting Crews</text>
+  <text x="685" y="585" text-anchor="middle" fill="#555" font-size="10">Lead Time &amp; Reschedules</text>
+  <text x="685" y="600" text-anchor="middle" fill="#555" font-size="10">Extended Warranties</text>
+
+  <rect x="790" y="510" width="170" height="120" rx="8" fill="#fff" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="875" y="535" text-anchor="middle" fill="#b33f08" font-size="11" font-weight="bold">FACT_INVENTORY</text>
+  <text x="875" y="555" text-anchor="middle" fill="#555" font-size="10">Store x SKU Snapshots</text>
+  <text x="875" y="570" text-anchor="middle" fill="#555" font-size="10">Palm Stockout Flags</text>
+  <text x="875" y="585" text-anchor="middle" fill="#555" font-size="10">Lost Sales Impact ($)</text>
+  <text x="875" y="600" text-anchor="middle" fill="#555" font-size="10">FACT_FARM_TRANSFERS</text>
+
+  <rect x="980" y="510" width="190" height="120" rx="8" fill="#fff" stroke="#7b61ff" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="1075" y="535" text-anchor="middle" fill="#5a3ec8" font-size="11" font-weight="bold">8 CONFORMED DIMS</text>
+  <text x="1075" y="555" text-anchor="middle" fill="#555" font-size="10">100 Locations (5 States)</text>
+  <text x="1075" y="570" text-anchor="middle" fill="#555" font-size="10">12 Farms | 400 Products</text>
+  <text x="1075" y="585" text-anchor="middle" fill="#555" font-size="10">50K Customers (PII Masked)</text>
+  <text x="1075" y="600" text-anchor="middle" fill="#555" font-size="10">400 Salespeople | 40 Camps</text>
+
+  <text x="600" y="668" text-anchor="middle" fill="#555" font-size="10" font-weight="bold">GOVERNANCE, SEARCH &amp; MARKETING TABLES</text>
+  <rect x="60" y="680" width="240" height="30" rx="6" fill="#fff" stroke="#29b5e8" stroke-width="1" filter="url(#sh)"/>
+  <text x="180" y="700" text-anchor="middle" fill="#0e7fad" font-size="10">FACT_MARKETING_LEADS (25K)</text>
+  <rect x="320" y="680" width="260" height="30" rx="6" fill="#fff" stroke="#00a843" stroke-width="1" filter="url(#sh)"/>
+  <text x="450" y="700" text-anchor="middle" fill="#007a31" font-size="10">Search Docs (Notes, Care, Warranty)</text>
+  <rect x="600" y="680" width="260" height="30" rx="6" fill="#fff" stroke="#7b61ff" stroke-width="1" filter="url(#sh)"/>
+  <text x="730" y="700" text-anchor="middle" fill="#5a3ec8" font-size="10">MVN_STATE_ROW_ACCESS_POLICY</text>
+  <rect x="880" y="680" width="260" height="30" rx="6" fill="#fff" stroke="#e8530e" stroke-width="1" filter="url(#sh)"/>
+  <text x="1010" y="700" text-anchor="middle" fill="#b33f08" font-size="10">EMAIL &amp; PHONE MASKING POLICIES</text>
+
+  <rect x="15" y="740" width="1170" height="60" rx="12" fill="#f8f9fa" stroke="#dde1e6" stroke-width="1" filter="url(#sh)"/>
+  <text x="600" y="765" text-anchor="middle" fill="#1a1a2e" font-size="14" font-weight="bold">ML MODELS (Snowflake Model Registry — MVN_INTELLIGENCE.ANALYTICS)</text>
+  <rect x="30" y="778" width="270" height="28" rx="6" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1" filter="url(#sh)"/>
+  <text x="42" y="796" fill="#0e7fad" font-size="10" font-weight="bold">Weekly Sales Forecast</text>
+  <text x="290" y="796" text-anchor="end" fill="#666" font-size="9">GBR | 7 Features</text>
+  <rect x="320" y="778" width="270" height="28" rx="6" fill="#fff3ed" stroke="#e8530e" stroke-width="1" filter="url(#sh)"/>
+  <text x="332" y="796" fill="#b33f08" font-size="10" font-weight="bold">14-Day Stockout Risk</text>
+  <text x="580" y="796" text-anchor="end" fill="#666" font-size="9">GBC | 7 Features</text>
+  <rect x="610" y="778" width="270" height="28" rx="6" fill="#f3f0ff" stroke="#7b61ff" stroke-width="1" filter="url(#sh)"/>
+  <text x="622" y="796" fill="#5a3ec8" font-size="10" font-weight="bold">Planting Attach Propensity</text>
+  <text x="870" y="796" text-anchor="end" fill="#666" font-size="9">GBC | 6 Features</text>
+  <rect x="900" y="778" width="270" height="28" rx="6" fill="#edf9f0" stroke="#00a843" stroke-width="1" filter="url(#sh)"/>
+  <text x="912" y="796" fill="#007a31" font-size="10" font-weight="bold">Planting Delay Risk</text>
+  <text x="1160" y="796" text-anchor="end" fill="#666" font-size="9">GBC | 6 Features</text>
+
+  <text x="600" y="845" text-anchor="middle" fill="#999" font-size="11">Moon Valley Nursery | Snowflake Intelligence | 100 Retail Nurseries | 12 Growing Farms | AZ, CA, NV, TX, FL</text>
+  <text x="600" y="863" text-anchor="middle" fill="#aaa" font-size="10">Powered by Cortex Agent + 3 Semantic Views + 3 Cortex Search Services + 4 Registered ML Models + Managed MCP Server</text>
+</svg>

@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1050" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <filter id="sh">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shLg">
+      <feDropShadow dx="2" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#29b5e8"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e8530e"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#00a843"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7b61ff"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="1050" fill="#ffffff"/>
+
+  <text x="600" y="40" text-anchor="middle" fill="#1a1a2e" font-size="26" font-weight="bold">Agent Tool Decision Flow</text>
+  <text x="600" y="65" text-anchor="middle" fill="#666" font-size="13">How MOON_VALLEY_AGENT Routes Queries Across 3 Semantic Views, 3 Search Services, and 4 ML UDFs</text>
+
+  <!-- Step 1: User Query -->
+  <rect x="400" y="90" width="400" height="50" rx="10" fill="#29b5e8" filter="url(#sh)"/>
+  <text x="600" y="121" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">User / Claude MCP Submits Natural Language Query</text>
+
+  <line x1="600" y1="140" x2="600" y2="170" stroke="#29b5e8" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- Step 2: Agent Orchestrator -->
+  <rect x="380" y="175" width="440" height="55" rx="12" fill="#e8530e" filter="url(#shLg)"/>
+  <text x="600" y="200" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">MOON_VALLEY_AGENT</text>
+  <text x="600" y="218" text-anchor="middle" fill="#ffe0cc" font-size="11">LLM Orchestrator analyzes intent, domain, and active RBAC session role</text>
+
+  <line x1="600" y1="230" x2="600" y2="260" stroke="#e8530e" stroke-width="2" marker-end="url(#arrowOrange)"/>
+
+  <!-- Step 3: Intent Classification Diamond -->
+  <polygon points="600,265 750,330 600,395 450,330" fill="#fff8f0" stroke="#e8530e" stroke-width="2" filter="url(#sh)"/>
+  <text x="600" y="325" text-anchor="middle" fill="#b33f08" font-size="13" font-weight="bold">Classify</text>
+  <text x="600" y="342" text-anchor="middle" fill="#b33f08" font-size="13" font-weight="bold">Query Intent</text>
+
+  <!-- Left branch: Care & Warranty Search -->
+  <line x1="450" y1="330" x2="265" y2="330" stroke="#7b61ff" stroke-width="2" marker-end="url(#arrowPurple)"/>
+  <rect x="290" y="308" width="135" height="20" rx="4" fill="#fff"/>
+  <text x="357" y="322" text-anchor="middle" fill="#7b61ff" font-size="10" font-weight="bold">Care / Warranty Policy</text>
+
+  <!-- Center-Left branch: Cortex Analyst (3 SVs) -->
+  <line x1="525" y1="395" x2="330" y2="460" stroke="#29b5e8" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <rect x="365" y="410" width="140" height="20" rx="4" fill="#fff"/>
+  <text x="435" y="424" text-anchor="middle" fill="#29b5e8" font-size="10" font-weight="bold">Sales / Ops / Inventory</text>
+
+  <!-- Center-Right branch: Planting Notes Search -->
+  <line x1="675" y1="395" x2="870" y2="460" stroke="#00a843" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <rect x="700" y="410" width="140" height="20" rx="4" fill="#fff"/>
+  <text x="770" y="424" text-anchor="middle" fill="#00a843" font-size="10" font-weight="bold">Field Crew Notes</text>
+
+  <!-- Right branch: ML Prediction UDFs -->
+  <line x1="750" y1="330" x2="895" y2="330" stroke="#e8530e" stroke-width="2" marker-end="url(#arrowOrange)"/>
+  <rect x="770" y="308" width="115" height="20" rx="4" fill="#fff"/>
+  <text x="827" y="322" text-anchor="middle" fill="#e8530e" font-size="10" font-weight="bold">ML Forecast / Risk</text>
+
+  <!-- Tool 1: Care & Warranty Search -->
+  <rect x="20" y="275" width="240" height="115" rx="10" fill="#f3f0ff" stroke="#7b61ff" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="140" y="296" text-anchor="middle" fill="#5a3ec8" font-size="12" font-weight="bold">PlantCare &amp; WarrantySearch</text>
+  <line x1="30" y1="305" x2="250" y2="305" stroke="#d4c8ff" stroke-width="1"/>
+  <text x="35" y="323" fill="#444" font-size="10">WHEN: "Warranty policy on palms..."</text>
+  <text x="35" y="339" fill="#444" font-size="10">"Summer watering schedule for..."</text>
+  <text x="35" y="355" fill="#444" font-size="10">"Moon Juice fertilizer guide..."</text>
+  <text x="35" y="371" fill="#444" font-size="10">"Builder replacement SLA..."</text>
+
+  <!-- Tool 2: Cortex Analyst (3 Semantic Views) -->
+  <rect x="200" y="465" width="260" height="135" rx="10" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="330" y="488" text-anchor="middle" fill="#0e7fad" font-size="13" font-weight="bold">Cortex Analyst (3 SVs)</text>
+  <text x="330" y="504" text-anchor="middle" fill="#29b5e8" font-size="10">Sales | PlantingOps | InventorySupply</text>
+  <line x1="210" y1="512" x2="450" y2="512" stroke="#b3e5fc" stroke-width="1"/>
+  <text x="215" y="530" fill="#444" font-size="10">WHEN: "AZ stores behind on tree sales"</text>
+  <text x="215" y="546" fill="#444" font-size="10">"Gross margin % for 24in vs 36in vs 48in"</text>
+  <text x="215" y="562" fill="#444" font-size="10">"Palm stockouts and lost sales"</text>
+  <text x="215" y="578" fill="#444" font-size="10">"Low-water trees suited to Phoenix 9b"</text>
+
+  <!-- Tool 3: Planting Notes Search -->
+  <rect x="740" y="465" width="260" height="135" rx="10" fill="#edf9f0" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="870" y="488" text-anchor="middle" fill="#007a31" font-size="13" font-weight="bold">PlantingNotesSearch</text>
+  <text x="870" y="504" text-anchor="middle" fill="#00a843" font-size="10">RAG over 240 Field Crew Logs</text>
+  <line x1="750" y1="512" x2="990" y2="512" stroke="#b9f6ca" stroke-width="1"/>
+  <text x="755" y="530" fill="#444" font-size="10">WHEN: "Why were AZ jobs rescheduled?"</text>
+  <text x="755" y="546" fill="#444" font-size="10">"Caliche hard dig rock breaker notes"</text>
+  <text x="755" y="562" fill="#444" font-size="10">"811 Blue Stake utility marking delays"</text>
+  <text x="755" y="578" fill="#444" font-size="10">"Crane gate access &amp; drip checks"</text>
+
+  <!-- Tool 4: ML Prediction UDFs -->
+  <rect x="900" y="275" width="280" height="115" rx="10" fill="#fff3ed" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="1040" y="296" text-anchor="middle" fill="#b33f08" font-size="12" font-weight="bold">4 ML Registry UDFs</text>
+  <line x1="910" y1="305" x2="1170" y2="305" stroke="#ffd4bf" stroke-width="1"/>
+  <text x="915" y="323" fill="#444" font-size="10">WHEN: "Forecast next spring tree sales"</text>
+  <text x="915" y="339" fill="#444" font-size="10">"Stores at risk of stocking out in 14d"</text>
+  <text x="915" y="355" fill="#444" font-size="10">"Planting attach propensity scores"</text>
+  <text x="915" y="371" fill="#444" font-size="10">"Planting jobs at risk of missing date"</text>
+
+  <!-- MULTI-TOOL SECTION -->
+  <rect x="100" y="630" width="1000" height="260" rx="12" fill="#f8f9fa" stroke="#dde1e6" stroke-width="1" filter="url(#sh)"/>
+  <text x="600" y="656" text-anchor="middle" fill="#1a1a2e" font-size="14" font-weight="bold">MULTI-TOOL CHAINING (Executive Questions)</text>
+  <text x="600" y="674" text-anchor="middle" fill="#888" font-size="11">MOON_VALLEY_AGENT chains Analyst, Search, ML UDFs, and Charts to answer multi-part questions</text>
+
+  <rect x="120" y="690" width="460" height="55" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1" filter="url(#sh)"/>
+  <text x="135" y="710" fill="#1a1a2e" font-size="11" font-weight="bold">"Which AZ stores are behind on fall tree sales, and why?"</text>
+  <rect x="135" y="718" width="95" height="18" rx="4" fill="#eaf7fc" stroke="#29b5e8" stroke-width="0.5"/>
+  <text x="183" y="731" text-anchor="middle" fill="#0e7fad" font-size="9" font-weight="bold">1. Sales SV</text>
+  <text x="236" y="731" fill="#888" font-size="10">&gt;</text>
+  <rect x="248" y="718" width="105" height="18" rx="4" fill="#eaf7fc" stroke="#29b5e8" stroke-width="0.5"/>
+  <text x="300" y="731" text-anchor="middle" fill="#0e7fad" font-size="9" font-weight="bold">2. Inventory SV</text>
+  <text x="360" y="731" fill="#888" font-size="10">&gt;</text>
+  <rect x="372" y="718" width="110" height="18" rx="4" fill="#edf9f0" stroke="#00a843" stroke-width="0.5"/>
+  <text x="427" y="731" text-anchor="middle" fill="#007a31" font-size="9" font-weight="bold">3. Notes Search</text>
+
+  <rect x="620" y="690" width="460" height="55" rx="8" fill="#fff" stroke="#7b61ff" stroke-width="1" filter="url(#sh)"/>
+  <text x="635" y="710" fill="#1a1a2e" font-size="11" font-weight="bold">"Where do we stock out of palms, and what is our warranty?"</text>
+  <rect x="635" y="718" width="105" height="18" rx="4" fill="#eaf7fc" stroke="#29b5e8" stroke-width="0.5"/>
+  <text x="688" y="731" text-anchor="middle" fill="#0e7fad" font-size="9" font-weight="bold">1. Inventory SV</text>
+  <text x="748" y="731" fill="#888" font-size="10">&gt;</text>
+  <rect x="760" y="718" width="125" height="18" rx="4" fill="#f3f0ff" stroke="#7b61ff" stroke-width="0.5"/>
+  <text x="822" y="731" text-anchor="middle" fill="#5a3ec8" font-size="9" font-weight="bold">2. Warranty Search</text>
+
+  <rect x="120" y="755" width="460" height="55" rx="8" fill="#fff" stroke="#e8530e" stroke-width="1" filter="url(#sh)"/>
+  <text x="135" y="775" fill="#1a1a2e" font-size="11" font-weight="bold">"Show jobs at risk of delay and recent AZ reschedule notes"</text>
+  <rect x="135" y="783" width="105" height="18" rx="4" fill="#fff3ed" stroke="#e8530e" stroke-width="0.5"/>
+  <text x="188" y="796" text-anchor="middle" fill="#b33f08" font-size="9" font-weight="bold">1. DelayRisk UDF</text>
+  <text x="248" y="796" fill="#888" font-size="10">&gt;</text>
+  <rect x="260" y="783" width="115" height="18" rx="4" fill="#edf9f0" stroke="#00a843" stroke-width="0.5"/>
+  <text x="318" y="796" text-anchor="middle" fill="#007a31" font-size="9" font-weight="bold">2. Notes Search</text>
+
+  <rect x="620" y="755" width="460" height="55" rx="8" fill="#fff" stroke="#00a843" stroke-width="1" filter="url(#sh)"/>
+  <text x="635" y="775" fill="#1a1a2e" font-size="11" font-weight="bold">"Phoenix low-water shade trees and summer watering guide"</text>
+  <rect x="635" y="783" width="105" height="18" rx="4" fill="#eaf7fc" stroke="#29b5e8" stroke-width="0.5"/>
+  <text x="688" y="796" text-anchor="middle" fill="#0e7fad" font-size="9" font-weight="bold">1. Inventory SV</text>
+  <text x="748" y="796" fill="#888" font-size="10">&gt;</text>
+  <rect x="760" y="783" width="110" height="18" rx="4" fill="#f3f0ff" stroke="#7b61ff" stroke-width="0.5"/>
+  <text x="815" y="796" text-anchor="middle" fill="#5a3ec8" font-size="9" font-weight="bold">2. Care Search</text>
+
+  <rect x="120" y="820" width="460" height="55" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1" filter="url(#sh)"/>
+  <text x="135" y="840" fill="#1a1a2e" font-size="11" font-weight="bold">"Compare FL vs TX new store ramp and chart monthly trend"</text>
+  <rect x="135" y="848" width="95" height="18" rx="4" fill="#eaf7fc" stroke="#29b5e8" stroke-width="0.5"/>
+  <text x="183" y="861" text-anchor="middle" fill="#0e7fad" font-size="9" font-weight="bold">1. Sales SV</text>
+  <text x="238" y="861" fill="#888" font-size="10">&gt;</text>
+  <rect x="250" y="848" width="105" height="18" rx="4" fill="#eaf7fc" stroke="#29b5e8" stroke-width="0.5"/>
+  <text x="303" y="861" text-anchor="middle" fill="#0e7fad" font-size="9" font-weight="bold">2. data_to_chart</text>
+
+  <rect x="620" y="820" width="460" height="55" rx="8" fill="#fff" stroke="#e8530e" stroke-width="1" filter="url(#sh)"/>
+  <text x="635" y="840" fill="#1a1a2e" font-size="11" font-weight="bold">"Stores at 14-day stockout risk and farm replenishment"</text>
+  <rect x="635" y="848" width="110" height="18" rx="4" fill="#fff3ed" stroke="#e8530e" stroke-width="0.5"/>
+  <text x="690" y="861" text-anchor="middle" fill="#b33f08" font-size="9" font-weight="bold">1. Stockout UDF</text>
+  <text x="753" y="861" fill="#888" font-size="10">&gt;</text>
+  <rect x="765" y="848" width="105" height="18" rx="4" fill="#eaf7fc" stroke="#29b5e8" stroke-width="0.5"/>
+  <text x="818" y="861" text-anchor="middle" fill="#0e7fad" font-size="9" font-weight="bold">2. Inventory SV</text>
+
+  <!-- DECISION SIGNALS LEGEND -->
+  <rect x="100" y="910" width="1000" height="120" rx="12" fill="#f8f9fa" stroke="#dde1e6" stroke-width="1" filter="url(#sh)"/>
+  <text x="600" y="940" text-anchor="middle" fill="#1a1a2e" font-size="14" font-weight="bold">DECISION SIGNALS</text>
+  <text x="600" y="958" text-anchor="middle" fill="#888" font-size="11">How MOON_VALLEY_AGENT selects the appropriate governed tool</text>
+
+  <circle cx="155" cy="985" r="8" fill="#29b5e8"/>
+  <text x="170" y="990" fill="#444" font-size="11" font-weight="bold">Analyst:</text>
+  <text x="228" y="990" fill="#666" font-size="10">Net sales, gross margin, attach rate, comps, lead time, stockouts, USDA zones</text>
+
+  <circle cx="650" cy="985" r="8" fill="#00a843"/>
+  <text x="665" y="990" fill="#444" font-size="11" font-weight="bold">Notes Search:</text>
+  <text x="750" y="990" fill="#666" font-size="10">Caliche hard dig, Blue Stake utility delays, crane access, drip logs</text>
+
+  <circle cx="155" cy="1010" r="8" fill="#7b61ff"/>
+  <text x="170" y="1015" fill="#444" font-size="11" font-weight="bold">Care/Warranty:</text>
+  <text x="262" y="1015" fill="#666" font-size="10">Palm replacement policy, watering schedules, Moon Juice fertilizer</text>
+
+  <circle cx="650" cy="1010" r="8" fill="#e8530e"/>
+  <text x="665" y="1015" fill="#444" font-size="11" font-weight="bold">ML UDFs:</text>
+  <text x="725" y="1015" fill="#666" font-size="10">"forecast spring sales", "14-day stockout risk", "delay risk", "propensity"</text>
+</svg>

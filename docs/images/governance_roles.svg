@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 680" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <filter id="sh">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shLg">
+      <feDropShadow dx="2" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <rect width="1100" height="680" fill="#ffffff"/>
+  <text x="550" y="38" text-anchor="middle" fill="#1a1a2e" font-size="24" font-weight="bold">Role-Aware Governance: Same Question, Role-Specific Answers</text>
+  <text x="550" y="60" text-anchor="middle" fill="#666" font-size="12">Enforced Automatically Across Snowflake Intelligence, Claude (via Managed MCP), and Power BI</text>
+
+  <!-- Shared Prompt Box -->
+  <rect x="250" y="80" width="600" height="58" rx="10" fill="#29b5e8" filter="url(#shLg)"/>
+  <text x="550" y="105" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">Identical User Prompt (Snowflake Intelligence / Claude MCP / Power BI)</text>
+  <text x="550" y="125" text-anchor="middle" fill="#eaf7fc" font-size="12">"Show net sales by state this quarter and top customer contact details."</text>
+
+  <!-- Split connectors to the two roles -->
+  <line x1="550" y1="138" x2="550" y2="158" stroke="#29b5e8" stroke-width="2"/>
+  <line x1="270" y1="158" x2="830" y2="158" stroke="#29b5e8" stroke-width="2"/>
+  <line x1="270" y1="158" x2="270" y2="182" stroke="#00a843" stroke-width="2"/>
+  <polygon points="266,180 274,180 270,188" fill="#00a843"/>
+  <line x1="830" y1="158" x2="830" y2="182" stroke="#e8530e" stroke-width="2"/>
+  <polygon points="826,180 834,180 830,188" fill="#e8530e"/>
+
+  <!-- Left Column: MVN_EXEC_ROLE -->
+  <rect x="40" y="190" width="460" height="440" rx="12" fill="#edf9f0" stroke="#00a843" stroke-width="1.5" filter="url(#shLg)"/>
+  <rect x="60" y="210" width="420" height="46" rx="8" fill="#00a843" filter="url(#sh)"/>
+  <text x="270" y="232" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">MVN_EXEC_ROLE (Bill Serva, CTO &amp; Executives)</text>
+  <text x="270" y="248" text-anchor="middle" fill="#d9f7e2" font-size="10">Full Multi-State Enterprise Visibility + Clear Customer PII</text>
+
+  <rect x="60" y="272" width="420" height="75" rx="8" fill="#fff" stroke="#00a843" stroke-width="1" filter="url(#sh)"/>
+  <text x="75" y="294" fill="#007a31" font-size="11" font-weight="bold">Policy Evaluation at Runtime:</text>
+  <text x="75" y="314" fill="#444" font-size="10">• MVN_STATE_ROW_ACCESS_POLICY → TRUE for all 5 states (100 stores)</text>
+  <text x="75" y="332" fill="#444" font-size="10">• MVN_EMAIL_MASKING_POLICY &amp; MVN_PHONE_MASKING_POLICY → Clear text</text>
+
+  <rect x="60" y="362" width="420" height="145" rx="8" fill="#fff" stroke="#00a843" stroke-width="1" filter="url(#sh)"/>
+  <text x="75" y="384" fill="#1a1a2e" font-size="11" font-weight="bold">Returned Sales Result (All 5 Operating States):</text>
+  <line x1="70" y1="392" x2="465" y2="392" stroke="#b9f6ca" stroke-width="1"/>
+  <text x="80" y="410" fill="#333" font-size="10" font-weight="bold">State      Stores      Net Sales (Q4)      Gross Margin %</text>
+  <text x="80" y="428" fill="#444" font-size="10">AZ           35        $14,820,450.00          58.4%</text>
+  <text x="80" y="445" fill="#444" font-size="10">CA           25        $11,240,180.00          59.1%</text>
+  <text x="80" y="462" fill="#444" font-size="10">TX           16         $6,490,320.00          57.8%</text>
+  <text x="80" y="479" fill="#444" font-size="10">NV           12         $4,910,600.00          58.2%</text>
+  <text x="80" y="496" fill="#444" font-size="10">FL           12         $3,880,110.00          56.9%</text>
+
+  <rect x="60" y="522" width="420" height="90" rx="8" fill="#fff" stroke="#00a843" stroke-width="1" filter="url(#sh)"/>
+  <text x="75" y="544" fill="#1a1a2e" font-size="11" font-weight="bold">Returned Customer Contact Sample (Unmasked):</text>
+  <text x="75" y="566" fill="#007a31" font-size="10">Email: customer.104@landscapingpros.com</text>
+  <text x="75" y="586" fill="#007a31" font-size="10">Phone: (480) 555-0812</text>
+
+  <!-- Right Column: MVN_AZ_STORE_MGR_ROLE -->
+  <rect x="600" y="190" width="460" height="440" rx="12" fill="#fff3ed" stroke="#e8530e" stroke-width="1.5" filter="url(#shLg)"/>
+  <rect x="620" y="210" width="420" height="46" rx="8" fill="#e8530e" filter="url(#sh)"/>
+  <text x="830" y="232" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">MVN_AZ_STORE_MGR_ROLE (Arizona Store Manager)</text>
+  <text x="830" y="248" text-anchor="middle" fill="#ffe0cc" font-size="10">Scoped to Arizona Locations Only + Masked Customer PII</text>
+
+  <rect x="620" y="272" width="420" height="75" rx="8" fill="#fff" stroke="#e8530e" stroke-width="1" filter="url(#sh)"/>
+  <text x="635" y="294" fill="#b33f08" font-size="11" font-weight="bold">Policy Evaluation at Runtime:</text>
+  <text x="635" y="314" fill="#444" font-size="10">• MVN_STATE_ROW_ACCESS_POLICY → Filters to state = 'AZ' (35 stores)</text>
+  <text x="635" y="332" fill="#444" font-size="10">• MVN_EMAIL_MASKING_POLICY &amp; MVN_PHONE_MASKING_POLICY → Masked</text>
+
+  <rect x="620" y="362" width="420" height="145" rx="8" fill="#fff" stroke="#e8530e" stroke-width="1" filter="url(#sh)"/>
+  <text x="635" y="384" fill="#1a1a2e" font-size="11" font-weight="bold">Returned Sales Result (Filtered Automatically to AZ):</text>
+  <line x1="630" y1="392" x2="1025" y2="392" stroke="#ffd4bf" stroke-width="1"/>
+  <text x="640" y="410" fill="#333" font-size="10" font-weight="bold">State      Stores      Net Sales (Q4)      Gross Margin %</text>
+  <text x="640" y="428" fill="#b33f08" font-size="10" font-weight="bold">AZ           35        $14,820,450.00          58.4%</text>
+  <text x="640" y="458" fill="#888" font-size="10">CA, TX, NV, FL rows are automatically filtered out at the</text>
+  <text x="640" y="475" fill="#888" font-size="10">data layer before Semantic Views, Agent, or Power BI see them.</text>
+  <text x="640" y="494" fill="#007a31" font-size="10" font-weight="bold">AZ total matches Executive Role's AZ line to the penny.</text>
+
+  <rect x="620" y="522" width="420" height="90" rx="8" fill="#fff" stroke="#e8530e" stroke-width="1" filter="url(#sh)"/>
+  <text x="635" y="544" fill="#1a1a2e" font-size="11" font-weight="bold">Returned Customer Contact Sample (Dynamically Masked):</text>
+  <text x="635" y="566" fill="#b33f08" font-size="10">Email: ***MASKED***@landscapingpros.com</text>
+  <text x="635" y="586" fill="#b33f08" font-size="10">Phone: (***) ***-0812</text>
+
+  <text x="550" y="658" text-anchor="middle" fill="#666" font-size="11">Zero duplicate semantic models, zero separate role-specific reports, and zero raw SQL exposed via MCP.</text>
+</svg>

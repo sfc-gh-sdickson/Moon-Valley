@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 840" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <filter id="sh">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shLg">
+      <feDropShadow dx="2" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="840" fill="#ffffff"/>
+  <text x="600" y="38" text-anchor="middle" fill="#1a1a2e" font-size="25" font-weight="bold">Moon Valley Nursery Kimball Fact Constellation</text>
+  <text x="600" y="62" text-anchor="middle" fill="#666" font-size="13">Three Reconciled Sales Facts + Four Operational Facts + Eight Conformed Dimensions + Reference Standards</text>
+
+  <!-- TOP BAND: CONFORMED DIMENSIONS (Row 1: 4 dims, Row 2: 4 dims) -->
+  <rect x="20" y="80" width="1160" height="190" rx="12" fill="#f8f9fa" stroke="#dde1e6" stroke-width="1" filter="url(#sh)"/>
+  <text x="600" y="104" text-anchor="middle" fill="#0e7fad" font-size="14" font-weight="bold">CONFORMED DIMENSIONS (MVN_INTELLIGENCE.RAW)</text>
+
+  <rect x="40" y="118" width="265" height="62" rx="8" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="172" y="140" text-anchor="middle" fill="#0e7fad" font-size="12" font-weight="bold">DIM_DATE (PK: date_key)</text>
+  <text x="172" y="157" text-anchor="middle" fill="#555" font-size="10">4,383 days (2015–2026) | Fiscal=Cal</text>
+  <text x="172" y="171" text-anchor="middle" fill="#555" font-size="10">season, is_peak_season, is_holiday</text>
+
+  <rect x="325" y="118" width="265" height="62" rx="8" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="457" y="140" text-anchor="middle" fill="#0e7fad" font-size="12" font-weight="bold">DIM_LOCATION (PK: location_id)</text>
+  <text x="457" y="157" text-anchor="middle" fill="#555" font-size="10">100 Stores (AZ, CA, NV, TX, FL)</text>
+  <text x="457" y="171" text-anchor="middle" fill="#555" font-size="10">hardiness_zone, open_date, is_new_market</text>
+
+  <rect x="610" y="118" width="265" height="62" rx="8" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="742" y="140" text-anchor="middle" fill="#0e7fad" font-size="12" font-weight="bold">DIM_PRODUCT (PK: product_id)</text>
+  <text x="742" y="157" text-anchor="middle" fill="#555" font-size="10">400 SKUs | 8 Categories | Box Sizes</text>
+  <text x="742" y="171" text-anchor="middle" fill="#555" font-size="10">unit_price, unit_cost, plant_symbol</text>
+
+  <rect x="895" y="118" width="265" height="62" rx="8" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="1027" y="140" text-anchor="middle" fill="#0e7fad" font-size="12" font-weight="bold">DIM_CUSTOMER (PK: customer_id)</text>
+  <text x="1027" y="157" text-anchor="middle" fill="#555" font-size="10">50,000 Customers (Home/Land/Builder)</text>
+  <text x="1027" y="171" text-anchor="middle" fill="#b33f08" font-size="10">email &amp; phone (Dynamic Masking)</text>
+
+  <rect x="40" y="192" width="265" height="62" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="172" y="214" text-anchor="middle" fill="#0e7fad" font-size="12" font-weight="bold">DIM_SALESPERSON (PK: salesperson_id)</text>
+  <text x="172" y="231" text-anchor="middle" fill="#555" font-size="10">400 Nursery Pros &amp; Tree Designers</text>
+  <text x="172" y="245" text-anchor="middle" fill="#555" font-size="10">location_id, hire_date, role_title</text>
+
+  <rect x="325" y="192" width="265" height="62" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="457" y="214" text-anchor="middle" fill="#0e7fad" font-size="12" font-weight="bold">DIM_CREW (PK: crew_id)</text>
+  <text x="457" y="231" text-anchor="middle" fill="#555" font-size="10">100 Field Planting Crews</text>
+  <text x="457" y="245" text-anchor="middle" fill="#555" font-size="10">location_id, crew_size, crane_certified</text>
+
+  <rect x="610" y="192" width="265" height="62" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="742" y="214" text-anchor="middle" fill="#0e7fad" font-size="12" font-weight="bold">DIM_FARM (PK: farm_id)</text>
+  <text x="742" y="231" text-anchor="middle" fill="#555" font-size="10">12 Growing Farms (AZ, CA, TX, FL)</text>
+  <text x="742" y="245" text-anchor="middle" fill="#555" font-size="10">state, acres, primary_specialty</text>
+
+  <rect x="895" y="192" width="265" height="62" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="1027" y="214" text-anchor="middle" fill="#0e7fad" font-size="12" font-weight="bold">DIM_CAMPAIGN (PK: campaign_id)</text>
+  <text x="1027" y="231" text-anchor="middle" fill="#555" font-size="10">40 Marketing Campaigns</text>
+  <text x="1027" y="245" text-anchor="middle" fill="#555" font-size="10">channel, start_date, end_date, budget</text>
+
+  <!-- Vertical connectors from Conformed Dimensions to Sales Constellation -->
+  <line x1="600" y1="270" x2="600" y2="298" stroke="#29b5e8" stroke-width="2"/>
+  <polygon points="596,296 604,296 600,304" fill="#29b5e8"/>
+
+  <!-- MIDDLE BAND: THREE-FACT SALES CONSTELLATION -->
+  <rect x="20" y="305" width="1160" height="190" rx="12" fill="#fff3ed" stroke="#e8530e" stroke-width="1.5" filter="url(#shLg)"/>
+  <text x="600" y="330" text-anchor="middle" fill="#b33f08" font-size="15" font-weight="bold">THREE-FACT KIMBALL SALES CONSTELLATION (100% Reconciled Across Grains)</text>
+
+  <rect x="45" y="348" width="330" height="125" rx="10" fill="#fff" stroke="#e8530e" stroke-width="2" filter="url(#sh)"/>
+  <text x="210" y="372" text-anchor="middle" fill="#b33f08" font-size="13" font-weight="bold">FACT_SALES_DAILY_LOCATION</text>
+  <text x="210" y="390" text-anchor="middle" fill="#e8530e" font-size="10" font-weight="bold">Grain: date_key × location_id</text>
+  <line x1="60" y1="398" x2="360" y2="398" stroke="#ffd4bf" stroke-width="1"/>
+  <text x="65" y="416" fill="#444" font-size="10">FKs: date_key, location_id (+ RAP on state)</text>
+  <text x="65" y="434" fill="#444" font-size="10">Metrics: gross_sales, net_sales, discounts</text>
+  <text x="65" y="452" fill="#444" font-size="10">units, transactions, gross_margin, planting_txns</text>
+
+  <line x1="375" y1="410" x2="425" y2="410" stroke="#e8530e" stroke-width="2"/>
+  <polygon points="383,406 375,410 383,414" fill="#e8530e"/>
+  <polygon points="417,406 425,410 417,414" fill="#e8530e"/>
+  <text x="400" y="400" text-anchor="middle" fill="#b33f08" font-size="9" font-weight="bold">Reconciles</text>
+
+  <rect x="435" y="348" width="330" height="125" rx="10" fill="#fff" stroke="#e8530e" stroke-width="2" filter="url(#sh)"/>
+  <text x="600" y="372" text-anchor="middle" fill="#b33f08" font-size="13" font-weight="bold">FACT_SALES_TRANSACTION</text>
+  <text x="600" y="390" text-anchor="middle" fill="#e8530e" font-size="10" font-weight="bold">Grain: transaction_id (Date × Store × Order)</text>
+  <line x1="450" y1="398" x2="750" y2="398" stroke="#ffd4bf" stroke-width="1"/>
+  <text x="455" y="416" fill="#444" font-size="10">FKs: date_key, location_id, customer_id,</text>
+  <text x="455" y="434" fill="#444" font-size="10">salesperson_id, campaign_id (+ RAP on state)</text>
+  <text x="455" y="452" fill="#444" font-size="10">Metrics: net_sales, gross_margin, includes_planting</text>
+
+  <line x1="765" y1="410" x2="815" y2="410" stroke="#e8530e" stroke-width="2"/>
+  <polygon points="773,406 765,410 773,414" fill="#e8530e"/>
+  <polygon points="807,406 815,410 807,414" fill="#e8530e"/>
+  <text x="790" y="400" text-anchor="middle" fill="#b33f08" font-size="9" font-weight="bold">Roll-up</text>
+
+  <rect x="825" y="348" width="330" height="125" rx="10" fill="#fff" stroke="#e8530e" stroke-width="2" filter="url(#sh)"/>
+  <text x="990" y="372" text-anchor="middle" fill="#b33f08" font-size="13" font-weight="bold">FACT_SALES_LINE</text>
+  <text x="990" y="390" text-anchor="middle" fill="#e8530e" font-size="10" font-weight="bold">Grain: transaction_id × line_no</text>
+  <line x1="840" y1="398" x2="1140" y2="398" stroke="#ffd4bf" stroke-width="1"/>
+  <text x="845" y="416" fill="#444" font-size="10">FKs: transaction_id, product_id, date_key, location_id</text>
+  <text x="845" y="434" fill="#444" font-size="10">Metrics: qty, unit_price, discount, extended_price,</text>
+  <text x="845" y="452" fill="#444" font-size="10">unit_cost, line_margin, discount_promo_type</text>
+
+  <!-- LOWER BAND 1: SUPPORTING OPERATIONAL & MARKETING FACTS -->
+  <rect x="20" y="520" width="1160" height="145" rx="12" fill="#edf9f0" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="600" y="544" text-anchor="middle" fill="#007a31" font-size="14" font-weight="bold">SUPPORTING OPERATIONAL, INVENTORY &amp; MARKETING FACTS</text>
+
+  <rect x="40" y="560" width="265" height="85" rx="8" fill="#fff" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="172" y="582" text-anchor="middle" fill="#007a31" font-size="12" font-weight="bold">FACT_PLANTED_JOBS</text>
+  <text x="172" y="600" text-anchor="middle" fill="#555" font-size="10">Grain: job_id (1 per planted order)</text>
+  <text x="172" y="616" text-anchor="middle" fill="#555" font-size="10">crew_id, sold/sched/completed_date</text>
+  <text x="172" y="632" text-anchor="middle" fill="#555" font-size="10">status, reschedule_reason, warranty_flag</text>
+
+  <rect x="325" y="560" width="265" height="85" rx="8" fill="#fff" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="457" y="582" text-anchor="middle" fill="#007a31" font-size="12" font-weight="bold">FACT_INVENTORY_DAILY</text>
+  <text x="457" y="600" text-anchor="middle" fill="#555" font-size="10">Grain: date_key × location_id × product_id</text>
+  <text x="457" y="616" text-anchor="middle" fill="#555" font-size="10">on_hand_units, on_order_units, stockout_flag</text>
+  <text x="457" y="632" text-anchor="middle" fill="#555" font-size="10">days_of_supply, estimated_lost_sales</text>
+
+  <rect x="610" y="560" width="265" height="85" rx="8" fill="#fff" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="742" y="582" text-anchor="middle" fill="#007a31" font-size="12" font-weight="bold">FACT_FARM_TRANSFERS</text>
+  <text x="742" y="600" text-anchor="middle" fill="#555" font-size="10">Grain: transfer_id (Farm-to-Yard)</text>
+  <text x="742" y="616" text-anchor="middle" fill="#555" font-size="10">farm_id, location_id, product_id</text>
+  <text x="742" y="632" text-anchor="middle" fill="#555" font-size="10">ship_date, arrival_date, units, freight</text>
+
+  <rect x="895" y="560" width="265" height="85" rx="8" fill="#fff" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="1027" y="582" text-anchor="middle" fill="#007a31" font-size="12" font-weight="bold">FACT_MARKETING_LEADS</text>
+  <text x="1027" y="600" text-anchor="middle" fill="#555" font-size="10">Grain: lead_id (1 per inquiry)</text>
+  <text x="1027" y="616" text-anchor="middle" fill="#555" font-size="10">campaign_id, location_id, lead_date</text>
+  <text x="1027" y="632" text-anchor="middle" fill="#555" font-size="10">converted_flag, converted_transaction_id</text>
+
+  <!-- LOWER BAND 2: PUBLIC REFERENCE STANDARDS (REFERENCE SCHEMA) -->
+  <rect x="20" y="685" width="1160" height="125" rx="12" fill="#f3f0ff" stroke="#7b61ff" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="600" y="709" text-anchor="middle" fill="#5a3ec8" font-size="14" font-weight="bold">PUBLIC AGRONOMIC &amp; SUPPLY-CHAIN REFERENCE STANDARDS (MVN_INTELLIGENCE.REFERENCE)</text>
+
+  <rect x="35" y="724" width="210" height="68" rx="8" fill="#fff" stroke="#7b61ff" stroke-width="1" filter="url(#sh)"/>
+  <text x="140" y="746" text-anchor="middle" fill="#5a3ec8" font-size="11" font-weight="bold">HARDINESS_ZONE_DIM</text>
+  <text x="140" y="763" text-anchor="middle" fill="#555" font-size="9">USDA Zones 8a–11a</text>
+  <text x="140" y="778" text-anchor="middle" fill="#555" font-size="9">min_temp_f_low / high</text>
+
+  <rect x="262" y="724" width="215" height="68" rx="8" fill="#fff" stroke="#7b61ff" stroke-width="1" filter="url(#sh)"/>
+  <text x="370" y="746" text-anchor="middle" fill="#5a3ec8" font-size="11" font-weight="bold">PLANT_TAXONOMY_DIM</text>
+  <text x="370" y="763" text-anchor="middle" fill="#555" font-size="9">USDA PLANTS Symbols</text>
+  <text x="370" y="778" text-anchor="middle" fill="#555" font-size="9">Scientific &amp; Common Names</text>
+
+  <rect x="495" y="724" width="210" height="68" rx="8" fill="#fff" stroke="#7b61ff" stroke-width="1" filter="url(#sh)"/>
+  <text x="600" y="746" text-anchor="middle" fill="#5a3ec8" font-size="11" font-weight="bold">WATER_USE_DIM</text>
+  <text x="600" y="763" text-anchor="middle" fill="#555" font-size="9">Very Low / Low / Mod / High</text>
+  <text x="600" y="778" text-anchor="middle" fill="#555" font-size="9">Desert HOA Rebate Approved</text>
+
+  <rect x="723" y="724" width="210" height="68" rx="8" fill="#fff" stroke="#7b61ff" stroke-width="1" filter="url(#sh)"/>
+  <text x="828" y="746" text-anchor="middle" fill="#5a3ec8" font-size="11" font-weight="bold">GS1_IDENTIFIERS</text>
+  <text x="828" y="763" text-anchor="middle" fill="#555" font-size="9">512 GTIN (SKU) &amp; GLN (Store)</text>
+  <text x="828" y="778" text-anchor="middle" fill="#555" font-size="9">POS-to-Farm Standardization</text>
+
+  <rect x="950" y="724" width="215" height="68" rx="8" fill="#fff" stroke="#7b61ff" stroke-width="1" filter="url(#sh)"/>
+  <text x="1057" y="746" text-anchor="middle" fill="#5a3ec8" font-size="11" font-weight="bold">PRODUCT_TAXONOMY_MAP</text>
+  <text x="1057" y="763" text-anchor="middle" fill="#555" font-size="9">SKU × Species Crosswalk</text>
+  <text x="1057" y="778" text-anchor="middle" fill="#555" font-size="9">Phoenix Full-Sun &amp; Zone Range</text>
+</svg>

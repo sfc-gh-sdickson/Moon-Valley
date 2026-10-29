@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <filter id="sh">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shLg">
+      <feDropShadow dx="2" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <rect width="1000" height="700" fill="#ffffff"/>
+  <text x="500" y="35" text-anchor="middle" fill="#1a1a2e" font-size="24" font-weight="bold">Moon Valley Nursery Deployment Flow</text>
+  <text x="500" y="58" text-anchor="middle" fill="#666" font-size="12">Execution Order: 01 → 02 → 03 → 03b → 04 → 05 → 06 → 07 → 08 → 09 → 10 → 11</text>
+
+  <!-- Row 1: 01 -> 02 -> 03 -> 03b -->
+  <rect x="50" y="85" width="180" height="60" rx="8" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="140" y="110" text-anchor="middle" fill="#0e7fad" font-size="13" font-weight="bold">01 Infrastructure</text>
+  <text x="140" y="128" text-anchor="middle" fill="#555" font-size="10">Database, 3 Schemas, WH</text>
+  <line x1="230" y1="115" x2="268" y2="115" stroke="#29b5e8" stroke-width="1.5"/>
+  <polygon points="266,111 276,115 266,119" fill="#29b5e8"/>
+
+  <rect x="280" y="85" width="180" height="60" rx="8" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="370" y="110" text-anchor="middle" fill="#0e7fad" font-size="13" font-weight="bold">02 Tables</text>
+  <text x="370" y="128" text-anchor="middle" fill="#555" font-size="10">23 Tables (RAW + REF)</text>
+  <line x1="460" y1="115" x2="498" y2="115" stroke="#29b5e8" stroke-width="1.5"/>
+  <polygon points="496,111 506,115 496,119" fill="#29b5e8"/>
+
+  <rect x="510" y="85" width="180" height="60" rx="8" fill="#edf9f0" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="600" y="110" text-anchor="middle" fill="#007a31" font-size="13" font-weight="bold">03 Synthetic Data</text>
+  <text x="600" y="128" text-anchor="middle" fill="#555" font-size="10">3-Fact Kimball + Ops</text>
+  <line x1="690" y1="115" x2="728" y2="115" stroke="#00a843" stroke-width="1.5"/>
+  <polygon points="726,111 736,115 726,119" fill="#00a843"/>
+
+  <rect x="740" y="85" width="210" height="60" rx="8" fill="#f3f0ff" stroke="#7b61ff" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="845" y="110" text-anchor="middle" fill="#5a3ec8" font-size="13" font-weight="bold">03b Reference Seed</text>
+  <text x="845" y="128" text-anchor="middle" fill="#555" font-size="10">USDA, GS1 + 330 Search Docs</text>
+
+  <!-- L-shaped connector from 03b (845,145) down to row 2 start 04 (140,200) -->
+  <line x1="845" y1="145" x2="845" y2="165" stroke="#7b61ff" stroke-width="1.5"/>
+  <line x1="845" y1="165" x2="140" y2="165" stroke="#7b61ff" stroke-width="1.5"/>
+  <line x1="140" y1="165" x2="140" y2="188" stroke="#7b61ff" stroke-width="1.5"/>
+  <polygon points="136,186 140,196 144,186" fill="#7b61ff"/>
+
+  <!-- Row 2: 04 -> 05 -> 06 -> 07 -->
+  <rect x="50" y="200" width="180" height="60" rx="8" fill="#edf9f0" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="140" y="225" text-anchor="middle" fill="#007a31" font-size="13" font-weight="bold">04 Analytical Views</text>
+  <text x="140" y="243" text-anchor="middle" fill="#555" font-size="10">7 Business + 4 ML Views</text>
+  <line x1="230" y1="230" x2="268" y2="230" stroke="#00a843" stroke-width="1.5"/>
+  <polygon points="266,226 276,230 266,234" fill="#00a843"/>
+
+  <rect x="280" y="200" width="180" height="60" rx="8" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="370" y="225" text-anchor="middle" fill="#0e7fad" font-size="13" font-weight="bold">05 Semantic Views</text>
+  <text x="370" y="243" text-anchor="middle" fill="#555" font-size="10">3 Governed Semantic Views</text>
+  <line x1="460" y1="230" x2="498" y2="230" stroke="#29b5e8" stroke-width="1.5"/>
+  <polygon points="496,226 506,230 496,234" fill="#29b5e8"/>
+
+  <rect x="510" y="200" width="180" height="60" rx="8" fill="#edf9f0" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="600" y="225" text-anchor="middle" fill="#007a31" font-size="13" font-weight="bold">06 Cortex Search</text>
+  <text x="600" y="243" text-anchor="middle" fill="#555" font-size="10">3 Search Services</text>
+  <line x1="690" y1="230" x2="728" y2="230" stroke="#00a843" stroke-width="1.5"/>
+  <polygon points="726,226 736,230 726,234" fill="#00a843"/>
+
+  <rect x="740" y="200" width="210" height="60" rx="8" fill="#fff3ed" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="845" y="225" text-anchor="middle" fill="#b33f08" font-size="13" font-weight="bold">07 ML Notebook</text>
+  <text x="845" y="243" text-anchor="middle" fill="#555" font-size="10">4 Models to Registry</text>
+
+  <!-- L-shaped connector from 07 (845,260) down to row 3 start 08 (140,315) -->
+  <line x1="845" y1="260" x2="845" y2="280" stroke="#e8530e" stroke-width="1.5"/>
+  <line x1="845" y1="280" x2="140" y2="280" stroke="#e8530e" stroke-width="1.5"/>
+  <line x1="140" y1="280" x2="140" y2="303" stroke="#e8530e" stroke-width="1.5"/>
+  <polygon points="136,301 140,311 144,301" fill="#e8530e"/>
+
+  <!-- Row 3: 08 -> 09 -> 10 -> 11 -->
+  <rect x="50" y="315" width="180" height="60" rx="8" fill="#fff3ed" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="140" y="340" text-anchor="middle" fill="#b33f08" font-size="13" font-weight="bold">08 ML UDFs</text>
+  <text x="140" y="358" text-anchor="middle" fill="#555" font-size="10">4 MODEL()!PREDICT UDFs</text>
+  <line x1="230" y1="345" x2="268" y2="345" stroke="#e8530e" stroke-width="1.5"/>
+  <polygon points="266,341 276,345 266,349" fill="#e8530e"/>
+
+  <rect x="280" y="315" width="180" height="60" rx="8" fill="#e8530e" filter="url(#shLg)"/>
+  <text x="370" y="340" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">09 Create Agent</text>
+  <text x="370" y="358" text-anchor="middle" fill="#ffe0cc" font-size="10">MOON_VALLEY_AGENT</text>
+  <line x1="460" y1="345" x2="498" y2="345" stroke="#e8530e" stroke-width="1.5"/>
+  <polygon points="496,341 506,345 496,349" fill="#e8530e"/>
+
+  <rect x="510" y="315" width="180" height="60" rx="8" fill="#f3f0ff" stroke="#7b61ff" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="600" y="340" text-anchor="middle" fill="#5a3ec8" font-size="13" font-weight="bold">10 Governance</text>
+  <text x="600" y="358" text-anchor="middle" fill="#555" font-size="10">Roles + RAP + Masking</text>
+  <line x1="690" y1="345" x2="728" y2="345" stroke="#7b61ff" stroke-width="1.5"/>
+  <polygon points="726,341 736,345 726,349" fill="#7b61ff"/>
+
+  <rect x="740" y="315" width="210" height="60" rx="8" fill="#29b5e8" filter="url(#shLg)"/>
+  <text x="845" y="340" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">11 Managed MCP</text>
+  <text x="845" y="358" text-anchor="middle" fill="#eaf7fc" font-size="10">MOON_VALLEY_MCP (OAuth)</text>
+
+  <!-- Agent Capabilities Section -->
+  <rect x="80" y="420" width="840" height="250" rx="12" fill="#f8f9fa" stroke="#dde1e6" stroke-width="1" filter="url(#shLg)"/>
+  <text x="500" y="450" text-anchor="middle" fill="#1a1a2e" font-size="16" font-weight="bold">Agent &amp; Platform Capabilities</text>
+
+  <rect x="110" y="470" width="230" height="50" rx="6" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1" filter="url(#sh)"/>
+  <text x="225" y="492" text-anchor="middle" fill="#0e7fad" font-size="11" font-weight="bold">Cortex Analyst (3 SVs)</text>
+  <text x="225" y="508" text-anchor="middle" fill="#555" font-size="9">Sales | Planting Ops | Inventory &amp; Supply</text>
+
+  <rect x="365" y="470" width="230" height="50" rx="6" fill="#edf9f0" stroke="#00a843" stroke-width="1" filter="url(#sh)"/>
+  <text x="480" y="492" text-anchor="middle" fill="#007a31" font-size="11" font-weight="bold">Cortex Search (3 Services)</text>
+  <text x="480" y="508" text-anchor="middle" fill="#555" font-size="9">Crew Notes | Care Guides | Warranty</text>
+
+  <rect x="620" y="470" width="230" height="50" rx="6" fill="#fff3ed" stroke="#e8530e" stroke-width="1" filter="url(#sh)"/>
+  <text x="735" y="492" text-anchor="middle" fill="#b33f08" font-size="11" font-weight="bold">Custom Tools (4 ML UDFs)</text>
+  <text x="735" y="508" text-anchor="middle" fill="#555" font-size="9">Sales | Stockout | Attach | Delay Risk</text>
+
+  <rect x="110" y="535" width="350" height="50" rx="6" fill="#f3f0ff" stroke="#7b61ff" stroke-width="1" filter="url(#sh)"/>
+  <text x="285" y="557" text-anchor="middle" fill="#5a3ec8" font-size="11" font-weight="bold">Governance &amp; Standards</text>
+  <text x="285" y="573" text-anchor="middle" fill="#555" font-size="9">EXEC vs AZ Store Mgr RAP | PII Masking | USDA &amp; GS1</text>
+
+  <rect x="485" y="535" width="365" height="50" rx="6" fill="#fff3ed" stroke="#e8530e" stroke-width="1" filter="url(#sh)"/>
+  <text x="668" y="557" text-anchor="middle" fill="#b33f08" font-size="11" font-weight="bold">Managed MCP + Power BI</text>
+  <text x="668" y="573" text-anchor="middle" fill="#555" font-size="9">Claude.ai OAuth Connector | Reconciled Semantic Layer</text>
+
+  <rect x="110" y="600" width="740" height="28" rx="6" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1" filter="url(#sh)"/>
+  <text x="480" y="619" text-anchor="middle" fill="#0e7fad" font-size="11">Data-to-Chart Visualization | 30+ Test Questions | 100% Daily-to-Line Fact Reconciliation</text>
+</svg>
