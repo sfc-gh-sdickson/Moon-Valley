@@ -670,7 +670,7 @@ TRUNCATE TABLE RAW.FACT_SALES_DAILY_LOCATION;
 CREATE OR REPLACE TEMPORARY TABLE TEMP_TXN_HEADER AS
 WITH raw_gen AS (
     SELECT SEQ4() + 1 AS t_id
-    FROM TABLE(GENERATOR(ROWCOUNT => 95000))
+    FROM TABLE(GENERATOR(ROWCOUNT => 300000))
 ),
 txn_dates AS (
     SELECT
@@ -680,7 +680,8 @@ txn_dates AS (
             WHEN MOD(t_id, 10) < 3 THEN DATEADD('day', MOD(t_id * 17, 2922), '2015-01-01'::DATE)
             ELSE                        DATEADD('day', MOD(t_id * 13, 1397), '2023-01-01'::DATE)
         END AS raw_date,
-        MOD(t_id * 31, 100) + 1 AS raw_loc_num
+        -- Hash-based store assignment so MOD(t_id, n) storyline rules are independent of location
+        MOD(ABS(HASH(t_id, 'mvn_loc')), 100) + 1 AS raw_loc_num
     FROM raw_gen
 ),
 locs_numbered AS (
@@ -732,7 +733,7 @@ valid_txns AS (
           location_id IN ('LOC-AZ-004', 'LOC-AZ-007', 'LOC-AZ-011', 'LOC-AZ-015', 'LOC-AZ-019')
           AND YEAR(adj_date) = 2026
           AND MONTH(adj_date) IN (9, 10, 11)
-          AND MOD(t_id, 10) < 4 -- 40% volume drop in Fall 2026 at these 5 AZ stores
+          AND MOD(t_id, 20) < 11 -- 55% volume drop in Fall 2026 at these 5 AZ stores
       )
 )
 SELECT
@@ -984,7 +985,7 @@ job_calc AS (
                  AND MOD(pt.job_seq, 10) < 6 THEN 1
             WHEN pt.max_container_code >= 3 AND pt.is_peak_season AND pt.crew_size <= 5
                  AND MOD(pt.job_seq, 10) < 7 THEN 1
-            WHEN pt.days_to_schedule >= 14 AND MOD(pt.job_seq, 10) < 5 THEN 1
+            WHEN ((CASE WHEN pt.is_peak_season THEN 8 ELSE 4 END) + pt.max_container_code * 2 + MOD(pt.job_seq, 5)) >= 14 AND MOD(pt.job_seq, 10) < 5 THEN 1
             ELSE 0
         END AS delayed_flag
     FROM planting_txns pt

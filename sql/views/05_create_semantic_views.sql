@@ -227,17 +227,17 @@ CREATE OR REPLACE SEMANTIC VIEW ANALYTICS.SV_MOON_VALLEY_SALES
       COMMENT = 'Customer segment: Homeowner, Landscaper, Builder/Commercial'
       SAMPLE_VALUES ('Homeowner', 'Landscaper', 'Builder/Commercial')
       IS_ENUM,
-    customers.email AS customer_email
+    customers.customer_email AS email
       COMMENT = 'Customer email (masked for store manager role)',
-    customers.phone AS customer_phone
+    customers.customer_phone AS phone
       COMMENT = 'Customer phone (masked for store manager role)',
 
     salespeople.salesperson_id AS salesperson_id
       COMMENT = 'Salesperson identifier',
-    salespeople.name AS salesperson_name
+    salespeople.salesperson_name AS name
       WITH SYNONYMS = ('salesperson', 'nursery pro', 'designer name')
       COMMENT = 'Salesperson full name',
-    salespeople.role_title AS salesperson_role
+    salespeople.salesperson_role AS role_title
       COMMENT = 'Salesperson role title',
 
     campaigns.campaign_id AS campaign_id
@@ -245,7 +245,7 @@ CREATE OR REPLACE SEMANTIC VIEW ANALYTICS.SV_MOON_VALLEY_SALES
     campaigns.campaign_name AS campaign_name
       WITH SYNONYMS = ('campaign', 'promotion name')
       COMMENT = 'Marketing campaign name',
-    campaigns.channel AS campaign_channel
+    campaigns.campaign_channel AS channel
       WITH SYNONYMS = ('marketing channel', 'ad channel', 'lead source')
       COMMENT = 'Marketing channel'
       SAMPLE_VALUES ('Paid Search', 'Direct Mail', 'Billboard/OOH', 'Local TV & Radio', 'Social Media', 'HOA/Builder Events')
@@ -442,7 +442,7 @@ CREATE OR REPLACE SEMANTIC VIEW ANALYTICS.SV_MOON_VALLEY_PLANTING_OPS
   DIMENSIONS (
     planted_jobs.job_id AS job_id
       COMMENT = 'Unique planting job ID',
-    planted_jobs.status AS job_status
+    planted_jobs.job_status AS status
       WITH SYNONYMS = ('planting status', 'installation status')
       COMMENT = 'Job status (Scheduled, Completed, Rescheduled, Cancelled)'
       SAMPLE_VALUES ('Scheduled', 'Completed', 'Rescheduled', 'Cancelled')
@@ -484,13 +484,13 @@ CREATE OR REPLACE SEMANTIC VIEW ANALYTICS.SV_MOON_VALLEY_PLANTING_OPS
     locations.region AS region
       COMMENT = 'Operating region',
 
-    dates.year AS sold_year
+    dates.sold_year AS year
       COMMENT = 'Year planting job was sold',
-    dates.quarter_name AS sold_quarter
+    dates.sold_quarter AS quarter_name
       COMMENT = 'Quarter planting job was sold',
-    dates.month_name AS sold_month
+    dates.sold_month AS month_name
       COMMENT = 'Month planting job was sold',
-    dates.season AS sold_season
+    dates.sold_season AS season
       WITH SYNONYMS = ('season')
       COMMENT = 'Season planting job was sold (Spring, Summer, Fall, Winter)'
       SAMPLE_VALUES ('Spring', 'Summer', 'Fall', 'Winter')
@@ -643,7 +643,7 @@ CREATE OR REPLACE SEMANTIC VIEW ANALYTICS.SV_MOON_VALLEY_INVENTORY_SUPPLY
   )
 
   DIMENSIONS (
-    dates.calendar_date AS snapshot_date
+    dates.snapshot_date AS calendar_date
       COMMENT = 'Inventory snapshot date',
     dates.year AS year
       COMMENT = 'Snapshot year',
@@ -667,7 +667,7 @@ CREATE OR REPLACE SEMANTIC VIEW ANALYTICS.SV_MOON_VALLEY_INVENTORY_SUPPLY
       IS_ENUM,
     locations.region AS region
       COMMENT = 'Operating region',
-    locations.hardiness_zone AS store_hardiness_zone
+    locations.store_hardiness_zone AS hardiness_zone
       WITH SYNONYMS = ('store zone', 'nursery hardiness zone')
       COMMENT = 'USDA Plant Hardiness Zone of the nursery store',
 
@@ -703,9 +703,9 @@ CREATE OR REPLACE SEMANTIC VIEW ANALYTICS.SV_MOON_VALLEY_INVENTORY_SUPPLY
     botanical_taxonomy.scientific_name AS scientific_name
       WITH SYNONYMS = ('latin name', 'botanical name')
       COMMENT = 'Botanical Latin scientific name',
-    botanical_taxonomy.common_name AS species_common_name
+    botanical_taxonomy.species_common_name AS common_name
       COMMENT = 'Standard species common name',
-    botanical_taxonomy.family AS botanical_family
+    botanical_taxonomy.botanical_family AS family
       COMMENT = 'Botanical family',
 
     farms.farm_id AS farm_id
@@ -713,9 +713,9 @@ CREATE OR REPLACE SEMANTIC VIEW ANALYTICS.SV_MOON_VALLEY_INVENTORY_SUPPLY
     farms.farm_name AS farm_name
       WITH SYNONYMS = ('farm', 'growing farm', 'source farm')
       COMMENT = 'Moon Valley growing farm name',
-    farms.state AS farm_state
+    farms.farm_state AS state
       COMMENT = 'State where growing farm is located',
-    farms.primary_specialty AS farm_specialty
+    farms.farm_specialty AS primary_specialty
       COMMENT = 'Primary crop specialty of the farm',
 
     inventory.stockout_flag AS stockout_flag
