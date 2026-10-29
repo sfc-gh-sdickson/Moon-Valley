@@ -45,6 +45,16 @@ CREATE OR REPLACE AGENT MVN_INTELLIGENCE.ANALYTICS.MOON_VALLEY_AGENT
         answer: "Use StockoutRisk to return ML-predicted 14-day stockout risks by store and SKU."
       - question: "Which planting jobs are at risk of missing their scheduled date?"
         answer: "Use PlantingDelayRisk to return active scheduled planting jobs predicted to experience delays."
+      - question: "Show a line chart of monthly net sales by state for 2025 and 2026."
+        answer: "Use SalesAnalyst for monthly net sales by state, then data_to_chart to render a multi-series line chart showing Spring/Fall peaks and the AZ/NV summer dip."
+      - question: "Show a stacked bar chart of net sales by product category for each state in 2026."
+        answer: "Use SalesAnalyst for 2026 net sales by state and product category, then data_to_chart to render a stacked bar chart of category mix."
+      - question: "Chart the top 10 stores by estimated lost sales from palm stockouts."
+        answer: "Use InventorySupplyAnalyst to rank stores by palm estimated lost sales, then data_to_chart to render a ranked bar chart."
+      - question: "Show a pie chart of planting reschedule reasons."
+        answer: "Use PlantingOpsAnalyst to count rescheduled jobs by reschedule reason, then data_to_chart to render a pie chart of reason share."
+      - question: "Plot average sale-to-planting lead time by season and region as a grouped bar chart."
+        answer: "Use PlantingOpsAnalyst for average days sold-to-completed by season and region, then data_to_chart to render a grouped bar chart."
 
   tools:
     - tool_spec:
