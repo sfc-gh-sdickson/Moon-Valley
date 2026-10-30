@@ -12,7 +12,7 @@
   <text x="600" y="65" text-anchor="middle" fill="#666" font-size="13">Snowflake Intelligence + Claude via Managed MCP + Power BI + Kimball Constellation + Cortex AI</text>
 
   <rect x="280" y="85" width="640" height="50" rx="10" fill="#29b5e8" filter="url(#sh)"/>
-  <text x="600" y="108" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">Users: Executives (Bill &amp; Catherine), Regional Leaders, AZ Store Managers, Analysts</text>
+  <text x="600" y="108" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">Users: Executives, Regional Leaders, AZ Store Managers, Analysts</text>
   <text x="600" y="125" text-anchor="middle" fill="#eaf7fc" font-size="11">Snowflake Intelligence | Claude.ai via Managed MCP (MOON_VALLEY_MCP) | Power BI DirectQuery</text>
 
   <line x1="600" y1="135" x2="600" y2="165" stroke="#29b5e8" stroke-width="2"/>

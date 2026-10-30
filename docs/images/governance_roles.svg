@@ -27,7 +27,7 @@
   <!-- Left Column: MVN_EXEC_ROLE -->
   <rect x="40" y="190" width="460" height="440" rx="12" fill="#edf9f0" stroke="#00a843" stroke-width="1.5" filter="url(#shLg)"/>
   <rect x="60" y="210" width="420" height="46" rx="8" fill="#00a843" filter="url(#sh)"/>
-  <text x="270" y="232" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">MVN_EXEC_ROLE (Bill Serva, CTO &amp; Executives)</text>
+  <text x="270" y="232" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">MVN_EXEC_ROLE (CTO &amp; Executives)</text>
   <text x="270" y="248" text-anchor="middle" fill="#d9f7e2" font-size="10">Full Multi-State Enterprise Visibility + Clear Customer PII</text>
 
   <rect x="60" y="272" width="420" height="75" rx="8" fill="#fff" stroke="#00a843" stroke-width="1" filter="url(#sh)"/>
