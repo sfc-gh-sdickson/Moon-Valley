@@ -2,13 +2,13 @@
 
 # Connecting Claude.ai to Moon Valley Nursery via Snowflake-Managed MCP Server
 
-This guide explains how Moon Valley Nursery executives (**Bill Serva, CTO** and **Catherine Digua, Data Lead**) and store managers connect **Claude.ai** (or Claude Desktop) directly to Snowflake using the **Snowflake-managed MCP Server (`MOON_VALLEY_MCP`)** with zero self-hosted servers and zero raw SQL exposure.
+This guide explains how Moon Valley Nursery executives (the **CTO** and **Data Lead**) and store managers connect **Claude.ai** (or Claude Desktop) directly to Snowflake using the **Snowflake-managed MCP Server (`MOON_VALLEY_MCP`)** with zero self-hosted servers and zero raw SQL exposure.
 
 ---
 
 ## Why Snowflake-Managed MCP for Moon Valley?
 
-1. **Zero Infrastructure to Host**: Catherine's data team does not need to deploy, patch, or monitor a container or custom MCP proxy server. Snowflake hosts the HTTPS MCP endpoint natively.
+1. **Zero Infrastructure to Host**: The Data Lead's data team does not need to deploy, patch, or monitor a container or custom MCP proxy server. Snowflake hosts the HTTPS MCP endpoint natively.
 2. **One Governed Tool (`CORTEX_AGENT_RUN`)**: `MOON_VALLEY_MCP` exposes **only** `MOON_VALLEY_AGENT` (`moon_valley_business_agent`). It deliberately **does not expose `SYSTEM_EXECUTE_SQL`**, ensuring Claude cannot bypass Semantic Views, verified queries, or business definitions.
 3. **Caller RBAC & Row-Level Security via OAuth**: Each user authenticates individually through Snowflake OAuth 2.0. When an executive signs in with `MVN_EXEC_ROLE`, Claude returns enterprise-wide numbers across `AZ`, `CA`, `NV`, `TX`, and `FL`. When an Arizona Store Manager signs in with `MVN_AZ_STORE_MGR_ROLE`, Snowflake automatically filters every underlying table to `state = 'AZ'` and masks customer email and phone numbers.
 

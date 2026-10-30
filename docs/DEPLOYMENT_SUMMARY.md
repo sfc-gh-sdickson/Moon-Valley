@@ -50,6 +50,6 @@ All SQL scripts, Snowflake Notebook cells, SVG architecture diagrams, and setup/
 - `docs/AGENT_SETUP.md` — Step-by-step deployment and verification guide
 - `docs/MCP_CLAUDE_SETUP.md` — Managed MCP server + Claude.ai OAuth custom connector guide
 - `docs/POWER_BI_SETUP.md` — Connecting Power BI to Semantic Views (including SSAS vs. SSIS cube architectural note)
-- `docs/DEMO_SCRIPT.md` — 7–10 minute live demo script for Catherine Digua & Bill Serva
+- `docs/DEMO_SCRIPT.md` — 7–10 minute live demo script for the CTO & Data Lead
 - `docs/DEPLOYMENT_SUMMARY.md` — Complete artifact inventory and compliance checklist
 - `docs/questions.md` — 32 complex test questions across all tools and roles

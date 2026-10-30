@@ -6,7 +6,7 @@ A governed Snowflake Intelligence and Cortex Agent architecture for **Moon Valle
 
 ## What This Demo Proves (The 2027 Plan Delivered Today)
 
-During discovery with **Catherine Digua (Data Lead)** and **Bill Serva (CTO)**, Moon Valley outlined a 2027 roadmap requiring a separate semantic-layer database, an interactive cube (referred to in discovery as an "SSIS cube", i.e., an **SSAS / SQL Server Analysis Services** tabular/multidimensional cube), Power BI for field users, and an MCP connection to Claude for executive natural-language questions—all maintained by a lean data team.
+During discovery with the **Data Lead** and **CTO**, Moon Valley outlined a 2027 roadmap requiring a separate semantic-layer database, an interactive cube (referred to in discovery as an "SSIS cube", i.e., an **SSAS / SQL Server Analysis Services** tabular/multidimensional cube), Power BI for field users, and an MCP connection to Claude for executive natural-language questions—all maintained by a lean data team.
 
 This project demonstrates that **Snowflake Semantic Views + Cortex Agent + a Snowflake-managed MCP server** deliver that entire 2027 architecture today with zero extra infrastructure to host:
 
@@ -126,6 +126,6 @@ Files **must** be executed in this exact sequence:
 - **[docs/AGENT_SETUP.md](docs/AGENT_SETUP.md)** — Step-by-step setup and verification guide
 - **[docs/MCP_CLAUDE_SETUP.md](docs/MCP_CLAUDE_SETUP.md)** — Connecting Claude.ai to `MOON_VALLEY_MCP` via Snowflake OAuth
 - **[docs/POWER_BI_SETUP.md](docs/POWER_BI_SETUP.md)** — Connecting Power BI to Snowflake Semantic Views (replacing the separate SSAS cube)
-- **[docs/DEMO_SCRIPT.md](docs/DEMO_SCRIPT.md)** — 7–10 minute live demo script for Catherine Digua & Bill Serva
+- **[docs/DEMO_SCRIPT.md](docs/DEMO_SCRIPT.md)** — 7–10 minute live demo script for the CTO & Data Lead
 - **[docs/DEPLOYMENT_SUMMARY.md](docs/DEPLOYMENT_SUMMARY.md)** — Complete object inventory and build status
 - **[docs/questions.md](docs/questions.md)** — 32 complex test questions across every domain, ML model, search service, and role

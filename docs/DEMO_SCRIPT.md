@@ -2,14 +2,14 @@
 
 # Moon Valley Nursery — 7–10 Minute Executive Demo Script
 
-**Audience:** Bill Serva (CTO) & Catherine Digua (Data Lead), Moon Valley Nursery  
+**Audience:** CTO & Data Lead, Moon Valley Nursery  
 **Presenter:** Snowflake Principal Solution Engineer  
 **Duration:** 7–10 Minutes  
-**Objective:** Prove that **Snowflake Semantic Views + Cortex Agent + a Snowflake-Managed MCP Server** deliver Moon Valley's entire 2027 semantic database + SSAS cube + Power BI + Claude MCP roadmap **today**, with zero extra infrastructure for Catherine's lean team to host.
+**Objective:** Prove that **Snowflake Semantic Views + Cortex Agent + a Snowflake-Managed MCP Server** deliver Moon Valley's entire 2027 semantic database + SSAS cube + Power BI + Claude MCP roadmap **today**, with zero extra infrastructure for the Data Lead's lean team to host.
 
 ---
 
-## Bill Serva's Top 5 Executive Questions Featured in This Demo
+## The CTO's Top 5 Executive Questions Featured in This Demo
 
 1. *"Which Arizona stores are behind last year on tree sales this fall, and why?"* (Multi-tool: Kimball Sales SV + Inventory SV + Field Crew Notes Search)
 2. *"Where are we running out of palms most often, and what did it cost us in sales?"* (Inventory SV + 14-Day Stockout Risk ML UDF + Warranty Policy Search)
@@ -26,7 +26,7 @@
 **What to Show:** Open `README.md` and display `docs/images/architecture.svg`.
 
 **Talk Track:**
-> "Bill, Catherine — when we spoke in October, you shared a clear vision for 2027: put AI in the hands of the business so executives can ask natural-language questions in Claude and store leaders get fast interactive reporting in Power BI.  
+> "when we spoke in October, you shared a clear vision for 2027: put AI in the hands of the business so executives can ask natural-language questions in Claude and store leaders get fast interactive reporting in Power BI.  
 > Right now, doing that on-prem means building and maintaining three new layers on top of your Kimball SQL Server warehouse: a separate semantic-layer database, an interactive SSAS cube (what came up as the 'SSIS/SSAS cube'), and a self-hosted MCP server for Claude. For a lean data team, every new tier is another system to synchronize and troubleshoot.  
 > What you're looking at today is your exact three-fact Kimball sales constellation—daily by location, transaction header, and sales line—plus planted jobs, inventory, and marketing, running on synthetic Moon Valley data. We're going to show that **governed Snowflake Semantic Views + one Cortex Agent + a Snowflake-managed MCP server** give you that entire 2027 experience right now."
 
@@ -37,12 +37,12 @@
 **What to Show:** Open `docs/images/kimball_model.svg` and `sql/views/05_create_semantic_views.sql`.
 
 **Talk Track:**
-> "Catherine, we didn't ask you to redesign your data model. Your three sales facts—`FACT_SALES_DAILY_LOCATION`, `FACT_SALES_TRANSACTION`, and `FACT_SALES_LINE`—carry over as-is and reconcile 100% to the penny.  
+> "We didn't ask you to redesign your data model. Your three sales facts—`FACT_SALES_DAILY_LOCATION`, `FACT_SALES_TRANSACTION`, and `FACT_SALES_LINE`—carry over as-is and reconcile 100% to the penny.  
 > On top of those tables, `SV_MOON_VALLEY_SALES`, `SV_MOON_VALLEY_PLANTING_OPS`, and `SV_MOON_VALLEY_INVENTORY_SUPPLY` define your business vocabulary once: 'store' maps to `DIM_LOCATION`, 'revenue' maps to `net_sales`, 'box-tree mix' maps to 24in/36in/48in+ specimen trees, and 'attach rate' maps to professional planting attach. There is no separate semantic database and no separate SSAS cube to process overnight."
 
 ---
 
-### Act 3: Snowflake Intelligence — Answering Bill's Flagship Questions (2 Minutes)
+### Act 3: Snowflake Intelligence — Answering the CTO's Flagship Questions (2 Minutes)
 
 **What to Show:** Open **Snowflake Intelligence** and select **`Moon Valley Business Assistant` (`MOON_VALLEY_AGENT`)**.
 
@@ -70,7 +70,7 @@ Where are we running out of palms most often, what did it cost us in sales, whic
 **What to Show:** Switch to **Claude.ai** connected to `MOON_VALLEY_MCP`. Show the connector settings (`docs/MCP_CLAUDE_SETUP.md`).
 
 **Talk Track:**
-> "Now let's switch to Claude.ai—the exact executive experience Bill asked for. Notice how Claude connects: it points directly to Snowflake's managed MCP endpoint (`MOON_VALLEY_MCP`) using OAuth. Catherine's team didn't deploy a single server. And critically, look at the exposed tool list: Claude sees **only** `moon_valley_business_agent`. We do **not** expose `SYSTEM_EXECUTE_SQL`, so Claude can never hallucinate raw SQL or bypass your semantic definitions."
+> "Now let's switch to Claude.ai—the exact executive experience the CTO asked for. Notice how Claude connects: it points directly to Snowflake's managed MCP endpoint (`MOON_VALLEY_MCP`) using OAuth. The Data Lead's team didn't deploy a single server. And critically, look at the exposed tool list: Claude sees **only** `moon_valley_business_agent`. We do **not** expose `SYSTEM_EXECUTE_SQL`, so Claude can never hallucinate raw SQL or bypass your semantic definitions."
 
 **Prompt in Claude.ai:**
 ```text
@@ -91,8 +91,8 @@ How does gross margin % differ for 24in vs 36in vs 48in+ box trees, and which pl
 Show net sales by state this quarter and sample customer contact details.
 ```
 **What Happens:**
-- **As `MVN_EXEC_ROLE` (Bill Serva)**: Returns all 5 states (`AZ`, `CA`, `TX`, `NV`, `FL`) across all 100 stores, with clear customer email and phone numbers.
-- **As `MVN_AZ_STORE_MGR_ROLE` (Arizona Store Manager)**: `MVN_STATE_ROW_ACCESS_POLICY` automatically restricts the result to **Arizona (`AZ`) only (35 stores)**—and the Arizona total matches Bill's Arizona row to the penny. Customer emails (`***MASKED***@...`) and phone numbers (`(***) ***-XXXX`) are dynamically masked.
+- **As `MVN_EXEC_ROLE` (CTO)**: Returns all 5 states (`AZ`, `CA`, `TX`, `NV`, `FL`) across all 100 stores, with clear customer email and phone numbers.
+- **As `MVN_AZ_STORE_MGR_ROLE` (Arizona Store Manager)**: `MVN_STATE_ROW_ACCESS_POLICY` automatically restricts the result to **Arizona (`AZ`) only (35 stores)**—and the Arizona total matches the CTO's Arizona row to the penny. Customer emails (`***MASKED***@...`) and phone numbers (`(***) ***-XXXX`) are dynamically masked.
 
 ---
 
@@ -101,16 +101,16 @@ Show net sales by state this quarter and sample customer contact details.
 **What to Show:** Open `docs/POWER_BI_SETUP.md` / Power BI connected to `SV_MOON_VALLEY_SALES`.
 
 **Talk Track:**
-> "When a field leader opens Power BI on Monday morning, Power BI queries `SV_MOON_VALLEY_SALES`—the exact same Semantic View that just answered Bill's question in Claude. Because `FACT_SALES_DAILY_LOCATION` and `FACT_SALES_LINE` are reconciled in Snowflake and share one metric definition, Power BI and Claude never disagree."
+> "When a field leader opens Power BI on Monday morning, Power BI queries `SV_MOON_VALLEY_SALES`—the exact same Semantic View that just answered the CTO's question in Claude. Because `FACT_SALES_DAILY_LOCATION` and `FACT_SALES_LINE` are reconciled in Snowflake and share one metric definition, Power BI and Claude never disagree."
 
 ---
 
 ### Act 7: Close — Proposed 30-Day Pilot (1 Minute)
 
 **Talk Track:**
-> "Bill, Catherine — you don't have to wait until 2027 or stand up a separate semantic database, an SSAS cube, and a self-hosted MCP server.  
+> "you don't have to wait until 2027 or stand up a separate semantic database, an SSAS cube, and a self-hosted MCP server.  
 > Let's run a focused **30-day pilot** using your 2015+ legacy and POS sales facts that are nearing sign-off:
 > - **Week 1:** Land your 3 Kimball sales facts and conformed dimensions in Snowflake.
 > - **Week 2:** Stand up `SV_MOON_VALLEY_SALES` and connect Power BI side-by-side.
 > - **Week 3:** Turn on `MOON_VALLEY_AGENT` and the managed Claude MCP connector with `MVN_EXEC_ROLE` and store-manager row access.
-> - **Success Criteria:** Bill asks his top five real business questions in Claude, verifies the numbers match Power BI to the penny, and Catherine's team has zero new servers to maintain."
+> - **Success Criteria:** The CTO asks their top five real business questions in Claude, verifies the numbers match Power BI to the penny, and the Data Lead's team has zero new servers to maintain."

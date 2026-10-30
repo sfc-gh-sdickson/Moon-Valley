@@ -8,7 +8,7 @@ This guide explains how Moon Valley Nursery connects **Power BI** directly to Sn
 
 ## Architectural Note: Why One Snowflake Semantic View Replaces the "SSIS/SSAS Cube"
 
-During the October 2026 discovery session with **Catherine Digua (Data Lead)** and **Bill Serva (CTO)**, the team described a 2027 target architecture featuring:
+During the October 2026 discovery session with the **Data Lead** and **CTO**, the team described a 2027 target architecture featuring:
 1. A separate semantic-layer database in front of the Kimball warehouse.
 2. An interactive cube (referred to in the meeting as an *"SSIS cube"*—technically **SSAS / SQL Server Analysis Services** tabular/multidimensional cube, while SSIS is SQL Server Integration Services ETL).
 3. Power BI dashboards for field users and SSRS for standard reports.

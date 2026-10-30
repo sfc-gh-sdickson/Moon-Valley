@@ -23,7 +23,7 @@ Business dynamics
 - Professional planting is a key attach service; planted jobs are tracked in a field services app.
 - Inventory is living product with long grow cycles, so stockouts of popular items (e.g., palms) lose sales.
 
-The data reality (from customer discovery, October 2026, with Catherine Digua, data lead, and Bill Serva, CTO)
+The data reality (from customer discovery, October 2026, with the data lead and CTO)
 - **Warehouse:** on-prem SQL Server with a Kimball star schema. The team prefers on-prem for now; a move to Microsoft Fabric is the eventual direction but "not anytime soon."
 - **Sales model:** a constellation of three fact tables: sales by day by location; sales by day by location by transaction; and sales by line.
 - **Sources:** Oracle POS; a field services solution tracking planted jobs; legacy sales back to 2015 (near sign-off); inventory data next; a marketing data warehouse being brought in.
@@ -80,7 +80,7 @@ Use SYNTHETIC data only. No Moon Valley data is required.
 │   ├── AGENT_SETUP.md                 # Step-by-step agent configuration guide
 │   ├── MCP_CLAUDE_SETUP.md            # Managed MCP server + Claude.ai connector guide
 │   ├── POWER_BI_SETUP.md              # Connecting Power BI to the semantic view
-│   ├── DEMO_SCRIPT.md                 # 7–10 minute demo script for Catherine & Bill
+│   ├── DEMO_SCRIPT.md                 # 7–10 minute demo script for the CTO & Data Lead
 │   ├── DEPLOYMENT_SUMMARY.md          # Current deployment status
 │   ├── questions.md                   # 30+ complex test questions
 │   └── images/
@@ -338,7 +338,7 @@ $$;
 - Verify agent YAML, UDF return types, naming conventions, tool resources and MCP server spec against docs
 
 ### 4. ASK QUESTIONS WHEN UNCLEAR
-- Confirm: the five executive questions Bill cares about most; whether "SSIS cube" means SSAS; which roles to demo
+- Confirm: the five executive questions the CTO cares about most; whether "SSIS cube" means SSAS; which roles to demo
 
 ### 5. SEMANTIC VIEWS USE TABLES/DIMENSIONS/METRICS — NOT SELECT...FROM
 - Declare tables as `alias AS fully.qualified.table PRIMARY KEY (...)`
@@ -509,7 +509,7 @@ Governance (run as two roles):
 4. **Claude via MCP (2 min):** ask the same question in Claude.ai; same answer, same governance, nothing hosted.
 5. **Governance (1 min):** same question as exec vs. AZ store manager.
 6. **Power BI (1 min):** Power BI on the same semantic view returns the same number.
-7. **Close (1 min):** propose a 30-day pilot on their 2015+ sales facts. Success = Bill asks five real questions and trusts the answers.
+7. **Close (1 min):** propose a 30-day pilot on their 2015+ sales facts. Success = the CTO asks five real questions and trusts the answers.
 
 ---
 
@@ -519,7 +519,7 @@ Governance (run as two roles):
 - [ ] Confirm customer name and business domain
 - [ ] Synthetic data only, mirroring the three-fact Kimball constellation
 - [ ] Confirm ML models (sales forecast, stockout risk, planting attach, planting delay)
-- [ ] Collect Bill's top five executive questions (if available)
+- [ ] Collect the CTO's top five executive questions (if available)
 - [ ] Confirm "SSIS cube" = SSAS
 
 ### During Development

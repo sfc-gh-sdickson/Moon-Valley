@@ -4,7 +4,7 @@
   
   Configures enterprise RBAC, Row Access Policies, and Dynamic Data Masking:
     - Roles:
-        * MVN_EXEC_ROLE         — Executive role (Bill Serva, Catherine Digua):
+        * MVN_EXEC_ROLE         — Executive role (CTO, Data Lead):
                                   sees all 5 states (AZ, CA, NV, TX, FL) and
                                   unmasked customer email & phone.
         * MVN_AZ_STORE_MGR_ROLE — Arizona Store Manager role: row access policy
