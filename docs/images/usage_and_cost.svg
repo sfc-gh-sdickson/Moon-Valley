@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" width="1200" height="760" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="760" fill="#ffffff"/>
+
+  <text x="600" y="42" text-anchor="middle" font-size="24" font-weight="bold" fill="#1a1a1a">Moon Valley Nursery Demo: Time &amp; Credits to Build and Deploy</text>
+  <text x="600" y="68" text-anchor="middle" font-size="14" fill="#555">Built with Cortex Code Desktop and deployed to Snowflake (Oct 29, 2026)</text>
+
+  <!-- Panel 1: Elapsed time -->
+  <rect x="40" y="90" width="1120" height="250" rx="10" fill="#f7fbfe" stroke="#29b5e8" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="60" y="122" font-size="17" font-weight="bold" fill="#1a1a1a">Elapsed time by phase (hours)</text>
+  <!-- axis: x=300 is 0h, 200px per hour -->
+  <g font-size="12" fill="#666" text-anchor="middle">
+    <line x1="300" y1="140" x2="300" y2="300" stroke="#ccc"/><text x="300" y="320">0</text>
+    <line x1="500" y1="140" x2="500" y2="300" stroke="#eee"/><text x="500" y="320">0.5</text>
+    <line x1="700" y1="140" x2="700" y2="300" stroke="#eee"/><text x="700" y="320">1.0</text>
+    <line x1="900" y1="140" x2="900" y2="300" stroke="#eee"/><text x="900" y="320">1.5</text>
+    <line x1="1100" y1="140" x2="1100" y2="300" stroke="#eee"/><text x="1100" y="320">2.0</text>
+  </g>
+  <g font-size="14" fill="#1a1a1a">
+    <text x="285" y="170" text-anchor="end">1. Build for review</text>
+    <rect x="300" y="152" width="673" height="28" rx="4" fill="#29b5e8" filter="url(#shadow)"/>
+    <text x="983" y="171">1h 41m</text>
+
+    <text x="285" y="220" text-anchor="end">2. Deploy &amp; test</text>
+    <rect x="300" y="202" width="413" height="28" rx="4" fill="#e31b23" filter="url(#shadow)"/>
+    <text x="723" y="221">1h 02m</text>
+
+    <text x="285" y="270" text-anchor="end">3. Enhancements</text>
+    <rect x="300" y="252" width="520" height="28" rx="4" fill="#f5b700" filter="url(#shadow)"/>
+    <text x="830" y="271">1h 18m</text>
+  </g>
+
+  <!-- Panel 2: Credits stacked -->
+  <rect x="40" y="360" width="1120" height="330" rx="10" fill="#f7fbfe" stroke="#29b5e8" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="60" y="392" font-size="17" font-weight="bold" fill="#1a1a1a">Snowflake credits by phase (AWS161)</text>
+  <!-- axis: x=300 is 0 credits, 100px per credit -->
+  <g font-size="12" fill="#666" text-anchor="middle">
+    <line x1="300" y1="410" x2="300" y2="600" stroke="#ccc"/><text x="300" y="620">0</text>
+    <line x1="400" y1="410" x2="400" y2="600" stroke="#eee"/><text x="400" y="620">1</text>
+    <line x1="500" y1="410" x2="500" y2="600" stroke="#eee"/><text x="500" y="620">2</text>
+    <line x1="600" y1="410" x2="600" y2="600" stroke="#eee"/><text x="600" y="620">3</text>
+    <line x1="700" y1="410" x2="700" y2="600" stroke="#eee"/><text x="700" y="620">4</text>
+    <line x1="800" y1="410" x2="800" y2="600" stroke="#eee"/><text x="800" y="620">5</text>
+    <line x1="900" y1="410" x2="900" y2="600" stroke="#eee"/><text x="900" y="620">6</text>
+    <line x1="1000" y1="410" x2="1000" y2="600" stroke="#eee"/><text x="1000" y="620">7</text>
+  </g>
+  <g font-size="14" fill="#1a1a1a">
+    <text x="285" y="440" text-anchor="end">1. Build for review</text>
+    <text x="310" y="440" fill="#666" font-style="italic">Billed to separate build account (not shown)</text>
+
+    <text x="285" y="490" text-anchor="end">2. Deploy &amp; test</text>
+    <rect x="300" y="472" width="176" height="28" fill="#29b5e8"/>
+    <rect x="476" y="472" width="147" height="28" fill="#e31b23"/>
+    <rect x="623" y="472" width="67" height="28" fill="#5b5b5b"/>
+    <text x="700" y="491">3.90</text>
+
+    <text x="285" y="540" text-anchor="end">3. Enhancements</text>
+    <rect x="300" y="522" width="432" height="28" fill="#29b5e8"/>
+    <rect x="732" y="522" width="99" height="28" fill="#e31b23"/>
+    <rect x="831" y="522" width="88" height="28" fill="#5b5b5b"/>
+    <text x="929" y="541">6.19</text>
+
+    <text x="285" y="590" text-anchor="end">Idle warehouse</text>
+    <rect x="300" y="572" width="2" height="28" fill="#5b5b5b"/>
+    <text x="312" y="591">0.01</text>
+  </g>
+  <!-- legend -->
+  <g font-size="13" fill="#1a1a1a">
+    <rect x="300" y="645" width="16" height="16" fill="#29b5e8"/><text x="322" y="658">Cortex Code (AI build assistant)</text>
+    <rect x="560" y="645" width="16" height="16" fill="#e31b23"/><text x="582" y="658">Cortex Agent testing</text>
+    <rect x="760" y="645" width="16" height="16" fill="#5b5b5b"/><text x="782" y="658">Warehouse + Cortex Search</text>
+  </g>
+
+  <text x="600" y="730" text-anchor="middle" font-size="12" fill="#666">Source: SNOWFLAKE.ACCOUNT_USAGE (warehouse metering, Cortex Agent, Cortex Search, Cortex Code Desktop usage). Credits exclude storage and search serving.</text>
+</svg>
