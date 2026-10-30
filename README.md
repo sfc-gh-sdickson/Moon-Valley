@@ -129,3 +129,4 @@ Files **must** be executed in this exact sequence:
 - **[docs/DEMO_SCRIPT.md](docs/DEMO_SCRIPT.md)** — 7–10 minute live demo script for the CTO & Data Lead
 - **[docs/DEPLOYMENT_SUMMARY.md](docs/DEPLOYMENT_SUMMARY.md)** — Complete object inventory and build status
 - **[docs/questions.md](docs/questions.md)** — 32 complex test questions across every domain, ML model, search service, and role
+- **[docs/USAGE_AND_COST.md](docs/USAGE_AND_COST.md)** — Time, credits, and tokens it took to build, deploy, and test this demo
